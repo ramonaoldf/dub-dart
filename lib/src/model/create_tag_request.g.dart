@@ -11,25 +11,21 @@ CreateTagRequest _$CreateTagRequestFromJson(Map<String, dynamic> json) =>
       'CreateTagRequest',
       json,
       ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['tag'],
-        );
         final val = CreateTagRequest(
-          tag: $checkedConvert('tag', (v) => v as String),
+          name: $checkedConvert('name', (v) => v as String?),
           color: $checkedConvert(
               'color',
-              (v) =>
-                  $enumDecodeNullable(_$CreateTagRequestColorEnumEnumMap, v)),
+              (v) => $enumDecodeNullable(_$CreateTagRequestColorEnumEnumMap, v,
+                  unknownValue:
+                      CreateTagRequestColorEnum.unknownDefaultOpenApi)),
+          tag: $checkedConvert('tag', (v) => v as String?),
         );
         return val;
       },
     );
 
 Map<String, dynamic> _$CreateTagRequestToJson(CreateTagRequest instance) {
-  final val = <String, dynamic>{
-    'tag': instance.tag,
-  };
+  final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
@@ -37,7 +33,9 @@ Map<String, dynamic> _$CreateTagRequestToJson(CreateTagRequest instance) {
     }
   }
 
+  writeNotNull('name', instance.name);
   writeNotNull('color', _$CreateTagRequestColorEnumEnumMap[instance.color]);
+  writeNotNull('tag', instance.tag);
   return val;
 }
 

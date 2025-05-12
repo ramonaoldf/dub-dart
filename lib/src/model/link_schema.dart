@@ -26,11 +26,13 @@ class LinkSchema {
 
     required  this.key,
 
-    required  this.externalId,
-
     required  this.url,
 
      this.trackConversion = false,
+
+    required  this.externalId,
+
+    required  this.tenantId,
 
      this.archived = false,
 
@@ -48,7 +50,11 @@ class LinkSchema {
 
     required  this.image,
 
+    required  this.video,
+
      this.rewrite = false,
+
+     this.doIndex = false,
 
     required  this.ios,
 
@@ -61,6 +67,8 @@ class LinkSchema {
     required  this.tagId,
 
     required  this.tags,
+
+    required  this.webhookIds,
 
     required  this.comments,
 
@@ -90,11 +98,15 @@ class LinkSchema {
 
      this.sales = 0,
 
+     this.saleAmount = 0,
+
     required  this.createdAt,
 
     required  this.updatedAt,
 
     required  this.projectId,
+
+    required  this.programId,
   });
 
       /// The unique ID of the short link.
@@ -102,7 +114,7 @@ class LinkSchema {
     
     name: r'id',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -115,7 +127,7 @@ class LinkSchema {
     
     name: r'domain',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -128,24 +140,11 @@ class LinkSchema {
     
     name: r'key',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
   final String key;
-
-
-
-      /// This is the ID of the link in your database. If set, it can be used to identify the link in the future. Must be prefixed with 'ext_' when passed as a query parameter.
-  @JsonKey(
-    
-    name: r'externalId',
-    required: true,
-    includeIfNull: true
-  )
-
-
-  final String? externalId;
 
 
 
@@ -154,7 +153,7 @@ class LinkSchema {
     
     name: r'url',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -162,16 +161,42 @@ class LinkSchema {
 
 
 
-      /// [BETA] Whether to track conversions for the short link.
+      /// Whether to track conversions for the short link.
   @JsonKey(
     defaultValue: false,
     name: r'trackConversion',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
   final bool trackConversion;
+
+
+
+      /// The ID of the link in your database. If set, it can be used to identify the link in future API requests (must be prefixed with 'ext_' when passed as a query parameter). This key is unique across your workspace.
+  @JsonKey(
+    
+    name: r'externalId',
+    required: true,
+    includeIfNull: true,
+  )
+
+
+  final String? externalId;
+
+
+
+      /// The ID of the tenant that created the link inside your system. If set, it can be used to fetch all links for a tenant.
+  @JsonKey(
+    
+    name: r'tenantId',
+    required: true,
+    includeIfNull: true,
+  )
+
+
+  final String? tenantId;
 
 
 
@@ -180,7 +205,7 @@ class LinkSchema {
     defaultValue: false,
     name: r'archived',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -193,7 +218,7 @@ class LinkSchema {
     
     name: r'expiresAt',
     required: true,
-    includeIfNull: true
+    includeIfNull: true,
   )
 
 
@@ -206,7 +231,7 @@ class LinkSchema {
     
     name: r'expiredUrl',
     required: true,
-    includeIfNull: true
+    includeIfNull: true,
   )
 
 
@@ -219,7 +244,7 @@ class LinkSchema {
     
     name: r'password',
     required: true,
-    includeIfNull: true
+    includeIfNull: true,
   )
 
 
@@ -232,7 +257,7 @@ class LinkSchema {
     defaultValue: false,
     name: r'proxy',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -245,7 +270,7 @@ class LinkSchema {
     
     name: r'title',
     required: true,
-    includeIfNull: true
+    includeIfNull: true,
   )
 
 
@@ -258,7 +283,7 @@ class LinkSchema {
     
     name: r'description',
     required: true,
-    includeIfNull: true
+    includeIfNull: true,
   )
 
 
@@ -271,11 +296,24 @@ class LinkSchema {
     
     name: r'image',
     required: true,
-    includeIfNull: true
+    includeIfNull: true,
   )
 
 
   final String? image;
+
+
+
+      /// The custom link preview video (og:video). Will be used for Custom Social Media Cards if `proxy` is true. Learn more: https://d.to/og
+  @JsonKey(
+    
+    name: r'video',
+    required: true,
+    includeIfNull: true,
+  )
+
+
+  final String? video;
 
 
 
@@ -284,11 +322,24 @@ class LinkSchema {
     defaultValue: false,
     name: r'rewrite',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
   final bool rewrite;
+
+
+
+      /// Whether to allow search engines to index the short link.
+  @JsonKey(
+    defaultValue: false,
+    name: r'doIndex',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final bool doIndex;
 
 
 
@@ -297,7 +348,7 @@ class LinkSchema {
     
     name: r'ios',
     required: true,
-    includeIfNull: true
+    includeIfNull: true,
   )
 
 
@@ -310,7 +361,7 @@ class LinkSchema {
     
     name: r'android',
     required: true,
-    includeIfNull: true
+    includeIfNull: true,
   )
 
 
@@ -322,7 +373,7 @@ class LinkSchema {
     
     name: r'geo',
     required: true,
-    includeIfNull: true
+    includeIfNull: true,
   )
 
 
@@ -335,7 +386,7 @@ class LinkSchema {
     defaultValue: false,
     name: r'publicStats',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -349,7 +400,7 @@ class LinkSchema {
     
     name: r'tagId',
     required: true,
-    includeIfNull: true
+    includeIfNull: true,
   )
 
 
@@ -362,11 +413,24 @@ class LinkSchema {
     
     name: r'tags',
     required: true,
-    includeIfNull: true
+    includeIfNull: true,
   )
 
 
   final List<TagSchema>? tags;
+
+
+
+      /// The IDs of the webhooks that the short link is associated with.
+  @JsonKey(
+    
+    name: r'webhookIds',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final List<String> webhookIds;
 
 
 
@@ -375,7 +439,7 @@ class LinkSchema {
     
     name: r'comments',
     required: true,
-    includeIfNull: true
+    includeIfNull: true,
   )
 
 
@@ -388,7 +452,7 @@ class LinkSchema {
     
     name: r'shortLink',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -401,7 +465,7 @@ class LinkSchema {
     
     name: r'qrCode',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -414,7 +478,7 @@ class LinkSchema {
     
     name: r'utm_source',
     required: true,
-    includeIfNull: true
+    includeIfNull: true,
   )
 
 
@@ -427,7 +491,7 @@ class LinkSchema {
     
     name: r'utm_medium',
     required: true,
-    includeIfNull: true
+    includeIfNull: true,
   )
 
 
@@ -440,7 +504,7 @@ class LinkSchema {
     
     name: r'utm_campaign',
     required: true,
-    includeIfNull: true
+    includeIfNull: true,
   )
 
 
@@ -453,7 +517,7 @@ class LinkSchema {
     
     name: r'utm_term',
     required: true,
-    includeIfNull: true
+    includeIfNull: true,
   )
 
 
@@ -466,7 +530,7 @@ class LinkSchema {
     
     name: r'utm_content',
     required: true,
-    includeIfNull: true
+    includeIfNull: true,
   )
 
 
@@ -479,11 +543,11 @@ class LinkSchema {
     
     name: r'userId',
     required: true,
-    includeIfNull: false
+    includeIfNull: true,
   )
 
 
-  final String userId;
+  final String? userId;
 
 
 
@@ -492,7 +556,7 @@ class LinkSchema {
     
     name: r'workspaceId',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -505,7 +569,7 @@ class LinkSchema {
     defaultValue: 0,
     name: r'clicks',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -518,7 +582,7 @@ class LinkSchema {
     
     name: r'lastClicked',
     required: true,
-    includeIfNull: true
+    includeIfNull: true,
   )
 
 
@@ -526,12 +590,12 @@ class LinkSchema {
 
 
 
-      /// [BETA]: The number of leads the short links has generated.
+      /// The number of leads the short links has generated.
   @JsonKey(
     defaultValue: 0,
     name: r'leads',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -539,16 +603,29 @@ class LinkSchema {
 
 
 
-      /// [BETA]: The number of sales the short links has generated.
+      /// The number of sales the short links has generated.
   @JsonKey(
     defaultValue: 0,
     name: r'sales',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
   final num sales;
+
+
+
+      /// The total dollar amount of sales the short links has generated (in cents).
+  @JsonKey(
+    defaultValue: 0,
+    name: r'saleAmount',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  final num saleAmount;
 
 
 
@@ -557,7 +634,7 @@ class LinkSchema {
     
     name: r'createdAt',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -570,7 +647,7 @@ class LinkSchema {
     
     name: r'updatedAt',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -584,7 +661,7 @@ class LinkSchema {
     
     name: r'projectId',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -592,87 +669,114 @@ class LinkSchema {
 
 
 
-  @override
-  bool operator ==(Object other) => identical(this, other) || other is LinkSchema &&
-     other.id == id &&
-     other.domain == domain &&
-     other.key == key &&
-     other.externalId == externalId &&
-     other.url == url &&
-     other.trackConversion == trackConversion &&
-     other.archived == archived &&
-     other.expiresAt == expiresAt &&
-     other.expiredUrl == expiredUrl &&
-     other.password == password &&
-     other.proxy == proxy &&
-     other.title == title &&
-     other.description == description &&
-     other.image == image &&
-     other.rewrite == rewrite &&
-     other.ios == ios &&
-     other.android == android &&
-     other.geo == geo &&
-     other.publicStats == publicStats &&
-     other.tagId == tagId &&
-     other.tags == tags &&
-     other.comments == comments &&
-     other.shortLink == shortLink &&
-     other.qrCode == qrCode &&
-     other.utmSource == utmSource &&
-     other.utmMedium == utmMedium &&
-     other.utmCampaign == utmCampaign &&
-     other.utmTerm == utmTerm &&
-     other.utmContent == utmContent &&
-     other.userId == userId &&
-     other.workspaceId == workspaceId &&
-     other.clicks == clicks &&
-     other.lastClicked == lastClicked &&
-     other.leads == leads &&
-     other.sales == sales &&
-     other.createdAt == createdAt &&
-     other.updatedAt == updatedAt &&
-     other.projectId == projectId;
+      /// The ID of the program the short link is associated with.
+  @JsonKey(
+    
+    name: r'programId',
+    required: true,
+    includeIfNull: true,
+  )
 
-  @override
-  int get hashCode =>
-    id.hashCode +
-    domain.hashCode +
-    key.hashCode +
-    (externalId == null ? 0 : externalId.hashCode) +
-    url.hashCode +
-    trackConversion.hashCode +
-    archived.hashCode +
-    (expiresAt == null ? 0 : expiresAt.hashCode) +
-    (expiredUrl == null ? 0 : expiredUrl.hashCode) +
-    (password == null ? 0 : password.hashCode) +
-    proxy.hashCode +
-    (title == null ? 0 : title.hashCode) +
-    (description == null ? 0 : description.hashCode) +
-    (image == null ? 0 : image.hashCode) +
-    rewrite.hashCode +
-    (ios == null ? 0 : ios.hashCode) +
-    (android == null ? 0 : android.hashCode) +
-    (geo == null ? 0 : geo.hashCode) +
-    publicStats.hashCode +
-    (tagId == null ? 0 : tagId.hashCode) +
-    (tags == null ? 0 : tags.hashCode) +
-    (comments == null ? 0 : comments.hashCode) +
-    shortLink.hashCode +
-    qrCode.hashCode +
-    (utmSource == null ? 0 : utmSource.hashCode) +
-    (utmMedium == null ? 0 : utmMedium.hashCode) +
-    (utmCampaign == null ? 0 : utmCampaign.hashCode) +
-    (utmTerm == null ? 0 : utmTerm.hashCode) +
-    (utmContent == null ? 0 : utmContent.hashCode) +
-    userId.hashCode +
-    workspaceId.hashCode +
-    clicks.hashCode +
-    (lastClicked == null ? 0 : lastClicked.hashCode) +
-    leads.hashCode +
-    sales.hashCode +
-    createdAt.hashCode +
-    updatedAt.hashCode +
-    projectId.hashCode;
+
+  final String? programId;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is LinkSchema &&
+      other.id == id &&
+      other.domain == domain &&
+      other.key == key &&
+      other.url == url &&
+      other.trackConversion == trackConversion &&
+      other.externalId == externalId &&
+      other.tenantId == tenantId &&
+      other.archived == archived &&
+      other.expiresAt == expiresAt &&
+      other.expiredUrl == expiredUrl &&
+      other.password == password &&
+      other.proxy == proxy &&
+      other.title == title &&
+      other.description == description &&
+      other.image == image &&
+      other.video == video &&
+      other.rewrite == rewrite &&
+      other.doIndex == doIndex &&
+      other.ios == ios &&
+      other.android == android &&
+      other.geo == geo &&
+      other.publicStats == publicStats &&
+      other.tagId == tagId &&
+      other.tags == tags &&
+      other.webhookIds == webhookIds &&
+      other.comments == comments &&
+      other.shortLink == shortLink &&
+      other.qrCode == qrCode &&
+      other.utmSource == utmSource &&
+      other.utmMedium == utmMedium &&
+      other.utmCampaign == utmCampaign &&
+      other.utmTerm == utmTerm &&
+      other.utmContent == utmContent &&
+      other.userId == userId &&
+      other.workspaceId == workspaceId &&
+      other.clicks == clicks &&
+      other.lastClicked == lastClicked &&
+      other.leads == leads &&
+      other.sales == sales &&
+      other.saleAmount == saleAmount &&
+      other.createdAt == createdAt &&
+      other.updatedAt == updatedAt &&
+      other.projectId == projectId &&
+      other.programId == programId;
+
+    @override
+    int get hashCode =>
+        id.hashCode +
+        domain.hashCode +
+        key.hashCode +
+        url.hashCode +
+        trackConversion.hashCode +
+        (externalId == null ? 0 : externalId.hashCode) +
+        (tenantId == null ? 0 : tenantId.hashCode) +
+        archived.hashCode +
+        (expiresAt == null ? 0 : expiresAt.hashCode) +
+        (expiredUrl == null ? 0 : expiredUrl.hashCode) +
+        (password == null ? 0 : password.hashCode) +
+        proxy.hashCode +
+        (title == null ? 0 : title.hashCode) +
+        (description == null ? 0 : description.hashCode) +
+        (image == null ? 0 : image.hashCode) +
+        (video == null ? 0 : video.hashCode) +
+        rewrite.hashCode +
+        doIndex.hashCode +
+        (ios == null ? 0 : ios.hashCode) +
+        (android == null ? 0 : android.hashCode) +
+        (geo == null ? 0 : geo.hashCode) +
+        publicStats.hashCode +
+        (tagId == null ? 0 : tagId.hashCode) +
+        (tags == null ? 0 : tags.hashCode) +
+        webhookIds.hashCode +
+        (comments == null ? 0 : comments.hashCode) +
+        shortLink.hashCode +
+        qrCode.hashCode +
+        (utmSource == null ? 0 : utmSource.hashCode) +
+        (utmMedium == null ? 0 : utmMedium.hashCode) +
+        (utmCampaign == null ? 0 : utmCampaign.hashCode) +
+        (utmTerm == null ? 0 : utmTerm.hashCode) +
+        (utmContent == null ? 0 : utmContent.hashCode) +
+        (userId == null ? 0 : userId.hashCode) +
+        workspaceId.hashCode +
+        clicks.hashCode +
+        (lastClicked == null ? 0 : lastClicked.hashCode) +
+        leads.hashCode +
+        sales.hashCode +
+        saleAmount.hashCode +
+        createdAt.hashCode +
+        updatedAt.hashCode +
+        projectId.hashCode +
+        (programId == null ? 0 : programId.hashCode);
 
   factory LinkSchema.fromJson(Map<String, dynamic> json) => _$LinkSchemaFromJson(json);
 

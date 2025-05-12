@@ -7,8 +7,9 @@ import 'package:dub/src/auth/api_key_auth.dart';
 import 'package:dub/src/auth/basic_auth.dart';
 import 'package:dub/src/auth/bearer_auth.dart';
 import 'package:dub/src/auth/oauth.dart';
-import 'package:dub/src/api/analytics_api.dart';
+import 'package:dub/src/api/customers_api.dart';
 import 'package:dub/src/api/domains_api.dart';
+import 'package:dub/src/api/embed_tokens_api.dart';
 import 'package:dub/src/api/links_api.dart';
 import 'package:dub/src/api/metatags_api.dart';
 import 'package:dub/src/api/qr_codes_api.dart';
@@ -67,16 +68,22 @@ class Dub {
     }
   }
 
-  /// Get AnalyticsApi instance, base route and serializer can be overridden by a given but be careful,
+  /// Get CustomersApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
-  AnalyticsApi getAnalyticsApi() {
-    return AnalyticsApi(dio);
+  CustomersApi getCustomersApi() {
+    return CustomersApi(dio);
   }
 
   /// Get DomainsApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   DomainsApi getDomainsApi() {
     return DomainsApi(dio);
+  }
+
+  /// Get EmbedTokensApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  EmbedTokensApi getEmbedTokensApi() {
+    return EmbedTokensApi(dio);
   }
 
   /// Get LinksApi instance, base route and serializer can be overridden by a given but be careful,

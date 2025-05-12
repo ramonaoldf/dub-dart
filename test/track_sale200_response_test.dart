@@ -12,33 +12,13 @@ void main() {
       // TODO
     });
 
-    // String customerId
-    test('to test the property `customerId`', () async {
+    // TrackSale200ResponseCustomer customer
+    test('to test the property `customer`', () async {
       // TODO
     });
 
-    // num amount
-    test('to test the property `amount`', () async {
-      // TODO
-    });
-
-    // String paymentProcessor
-    test('to test the property `paymentProcessor`', () async {
-      // TODO
-    });
-
-    // String invoiceId
-    test('to test the property `invoiceId`', () async {
-      // TODO
-    });
-
-    // String currency
-    test('to test the property `currency`', () async {
-      // TODO
-    });
-
-    // Map<String, Object> metadata
-    test('to test the property `metadata`', () async {
+    // TrackSale200ResponseSale sale
+    test('to test the property `sale`', () async {
       // TODO
     });
 

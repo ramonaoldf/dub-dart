@@ -14,11 +14,12 @@ WorkspaceSchemaDomainsInner _$WorkspaceSchemaDomainsInnerFromJson(
       ($checkedConvert) {
         $checkKeys(
           json,
-          requiredKeys: const ['slug', 'primary'],
+          requiredKeys: const ['slug', 'primary', 'verified'],
         );
         final val = WorkspaceSchemaDomainsInner(
           slug: $checkedConvert('slug', (v) => v as String),
           primary: $checkedConvert('primary', (v) => v as bool? ?? false),
+          verified: $checkedConvert('verified', (v) => v as bool? ?? false),
         );
         return val;
       },
@@ -29,4 +30,5 @@ Map<String, dynamic> _$WorkspaceSchemaDomainsInnerToJson(
     <String, dynamic>{
       'slug': instance.slug,
       'primary': instance.primary,
+      'verified': instance.verified,
     };

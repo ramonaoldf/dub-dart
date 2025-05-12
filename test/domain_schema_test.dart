@@ -37,14 +37,8 @@ void main() {
       // TODO
     });
 
-    // Prevent search engines from indexing the domain.
-    // bool noindex (default value: false)
-    test('to test the property `noindex`', () async {
-      // TODO
-    });
-
     // Provide context to your teammates in the link creation modal by showing them an example of a link to be shortened.
-    // String placeholder (default value: 'https://dub.co/help/article/what-is-dub')
+    // String placeholder
     test('to test the property `placeholder`', () async {
       // TODO
     });
@@ -55,21 +49,32 @@ void main() {
       // TODO
     });
 
-    // The page your users will get redirected to when they visit your domain.
-    // String target
-    test('to test the property `target`', () async {
+    // The URL to redirect to when a link under this domain doesn't exist.
+    // String notFoundUrl
+    test('to test the property `notFoundUrl`', () async {
       // TODO
     });
 
-    // The type of redirect to use for this domain.
-    // String type
-    test('to test the property `type`', () async {
+    // The logo of the domain.
+    // String logo
+    test('to test the property `logo`', () async {
       // TODO
     });
 
-    // The number of clicks on the domain.
-    // num clicks (default value: 0)
-    test('to test the property `clicks`', () async {
+    // The date the domain was created.
+    // String createdAt
+    test('to test the property `createdAt`', () async {
+      // TODO
+    });
+
+    // The date the domain was last updated.
+    // String updatedAt
+    test('to test the property `updatedAt`', () async {
+      // TODO
+    });
+
+    // DomainSchemaRegisteredDomain registeredDomain
+    test('to test the property `registeredDomain`', () async {
       // TODO
     });
 

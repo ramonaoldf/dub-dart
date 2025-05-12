@@ -11,8 +11,17 @@ void main() {
     //
     // Create a new tag for the authenticated workspace.
     //
-    //Future<TagSchema> createTag(String workspaceId, { String projectSlug, CreateTagRequest createTagRequest }) async
+    //Future<TagSchema> createTag({ CreateTagRequest createTagRequest }) async
     test('test createTag', () async {
+      // TODO
+    });
+
+    // Delete a tag
+    //
+    // Delete a tag from the workspace. All existing links will still work, but they will no longer be associated with this tag.
+    //
+    //Future<DeleteTag200Response> deleteTag(String id) async
+    test('test deleteTag', () async {
       // TODO
     });
 
@@ -20,8 +29,17 @@ void main() {
     //
     // Retrieve a list of tags for the authenticated workspace.
     //
-    //Future<List<TagSchema>> getTags(String workspaceId, { String projectSlug }) async
+    //Future<List<TagSchema>> getTags({ String sortBy, String sortOrder, String search, List<String> ids, num page, num pageSize }) async
     test('test getTags', () async {
+      // TODO
+    });
+
+    // Update a tag
+    //
+    // Update a tag in the workspace.
+    //
+    //Future<TagSchema> updateTag(String id, { CreateTagRequest createTagRequest }) async
+    test('test updateTag', () async {
       // TODO
     });
 

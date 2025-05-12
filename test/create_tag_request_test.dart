@@ -8,14 +8,20 @@ void main() {
 
   group(CreateTagRequest, () {
     // The name of the tag to create.
-    // String tag
-    test('to test the property `tag`', () async {
+    // String name
+    test('to test the property `name`', () async {
       // TODO
     });
 
     // The color of the tag. If not provided, a random color will be used from the list: red, yellow, green, blue, purple, pink, brown.
     // String color
     test('to test the property `color`', () async {
+      // TODO
+    });
+
+    // The name of the tag to create.
+    // String tag
+    test('to test the property `tag`', () async {
       // TODO
     });
 

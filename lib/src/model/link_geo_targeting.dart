@@ -523,7 +523,7 @@ class LinkGeoTargeting {
     
     name: r'AF',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -535,7 +535,7 @@ class LinkGeoTargeting {
     
     name: r'AL',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -547,7 +547,7 @@ class LinkGeoTargeting {
     
     name: r'DZ',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -559,7 +559,7 @@ class LinkGeoTargeting {
     
     name: r'AS',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -571,7 +571,7 @@ class LinkGeoTargeting {
     
     name: r'AD',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -583,7 +583,7 @@ class LinkGeoTargeting {
     
     name: r'AO',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -595,7 +595,7 @@ class LinkGeoTargeting {
     
     name: r'AI',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -607,7 +607,7 @@ class LinkGeoTargeting {
     
     name: r'AQ',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -619,7 +619,7 @@ class LinkGeoTargeting {
     
     name: r'AG',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -631,7 +631,7 @@ class LinkGeoTargeting {
     
     name: r'AR',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -643,7 +643,7 @@ class LinkGeoTargeting {
     
     name: r'AM',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -655,7 +655,7 @@ class LinkGeoTargeting {
     
     name: r'AW',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -667,7 +667,7 @@ class LinkGeoTargeting {
     
     name: r'AU',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -679,7 +679,7 @@ class LinkGeoTargeting {
     
     name: r'AT',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -691,7 +691,7 @@ class LinkGeoTargeting {
     
     name: r'AZ',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -703,7 +703,7 @@ class LinkGeoTargeting {
     
     name: r'BS',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -715,7 +715,7 @@ class LinkGeoTargeting {
     
     name: r'BH',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -727,7 +727,7 @@ class LinkGeoTargeting {
     
     name: r'BD',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -739,7 +739,7 @@ class LinkGeoTargeting {
     
     name: r'BB',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -751,7 +751,7 @@ class LinkGeoTargeting {
     
     name: r'BY',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -763,7 +763,7 @@ class LinkGeoTargeting {
     
     name: r'BE',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -775,7 +775,7 @@ class LinkGeoTargeting {
     
     name: r'BZ',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -787,7 +787,7 @@ class LinkGeoTargeting {
     
     name: r'BJ',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -799,7 +799,7 @@ class LinkGeoTargeting {
     
     name: r'BM',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -811,7 +811,7 @@ class LinkGeoTargeting {
     
     name: r'BT',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -823,7 +823,7 @@ class LinkGeoTargeting {
     
     name: r'BO',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -835,7 +835,7 @@ class LinkGeoTargeting {
     
     name: r'BA',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -847,7 +847,7 @@ class LinkGeoTargeting {
     
     name: r'BW',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -859,7 +859,7 @@ class LinkGeoTargeting {
     
     name: r'BV',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -871,7 +871,7 @@ class LinkGeoTargeting {
     
     name: r'BR',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -883,7 +883,7 @@ class LinkGeoTargeting {
     
     name: r'IO',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -895,7 +895,7 @@ class LinkGeoTargeting {
     
     name: r'BN',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -907,7 +907,7 @@ class LinkGeoTargeting {
     
     name: r'BG',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -919,7 +919,7 @@ class LinkGeoTargeting {
     
     name: r'BF',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -931,7 +931,7 @@ class LinkGeoTargeting {
     
     name: r'BI',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -943,7 +943,7 @@ class LinkGeoTargeting {
     
     name: r'KH',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -955,7 +955,7 @@ class LinkGeoTargeting {
     
     name: r'CM',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -967,7 +967,7 @@ class LinkGeoTargeting {
     
     name: r'CA',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -979,7 +979,7 @@ class LinkGeoTargeting {
     
     name: r'CV',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -991,7 +991,7 @@ class LinkGeoTargeting {
     
     name: r'KY',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1003,7 +1003,7 @@ class LinkGeoTargeting {
     
     name: r'CF',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1015,7 +1015,7 @@ class LinkGeoTargeting {
     
     name: r'TD',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1027,7 +1027,7 @@ class LinkGeoTargeting {
     
     name: r'CL',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1039,7 +1039,7 @@ class LinkGeoTargeting {
     
     name: r'CN',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1051,7 +1051,7 @@ class LinkGeoTargeting {
     
     name: r'CX',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1063,7 +1063,7 @@ class LinkGeoTargeting {
     
     name: r'CC',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1075,7 +1075,7 @@ class LinkGeoTargeting {
     
     name: r'CO',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1087,7 +1087,7 @@ class LinkGeoTargeting {
     
     name: r'KM',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1099,7 +1099,7 @@ class LinkGeoTargeting {
     
     name: r'CG',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1111,7 +1111,7 @@ class LinkGeoTargeting {
     
     name: r'CD',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1123,7 +1123,7 @@ class LinkGeoTargeting {
     
     name: r'CK',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1135,7 +1135,7 @@ class LinkGeoTargeting {
     
     name: r'CR',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1147,7 +1147,7 @@ class LinkGeoTargeting {
     
     name: r'CI',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1159,7 +1159,7 @@ class LinkGeoTargeting {
     
     name: r'HR',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1171,7 +1171,7 @@ class LinkGeoTargeting {
     
     name: r'CU',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1183,7 +1183,7 @@ class LinkGeoTargeting {
     
     name: r'CY',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1195,7 +1195,7 @@ class LinkGeoTargeting {
     
     name: r'CZ',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1207,7 +1207,7 @@ class LinkGeoTargeting {
     
     name: r'DK',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1219,7 +1219,7 @@ class LinkGeoTargeting {
     
     name: r'DJ',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1231,7 +1231,7 @@ class LinkGeoTargeting {
     
     name: r'DM',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1243,7 +1243,7 @@ class LinkGeoTargeting {
     
     name: r'DO',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1255,7 +1255,7 @@ class LinkGeoTargeting {
     
     name: r'EC',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1267,7 +1267,7 @@ class LinkGeoTargeting {
     
     name: r'EG',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1279,7 +1279,7 @@ class LinkGeoTargeting {
     
     name: r'SV',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1291,7 +1291,7 @@ class LinkGeoTargeting {
     
     name: r'GQ',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1303,7 +1303,7 @@ class LinkGeoTargeting {
     
     name: r'ER',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1315,7 +1315,7 @@ class LinkGeoTargeting {
     
     name: r'EE',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1327,7 +1327,7 @@ class LinkGeoTargeting {
     
     name: r'ET',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1339,7 +1339,7 @@ class LinkGeoTargeting {
     
     name: r'FK',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1351,7 +1351,7 @@ class LinkGeoTargeting {
     
     name: r'FO',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1363,7 +1363,7 @@ class LinkGeoTargeting {
     
     name: r'FJ',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1375,7 +1375,7 @@ class LinkGeoTargeting {
     
     name: r'FI',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1387,7 +1387,7 @@ class LinkGeoTargeting {
     
     name: r'FR',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1399,7 +1399,7 @@ class LinkGeoTargeting {
     
     name: r'GF',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1411,7 +1411,7 @@ class LinkGeoTargeting {
     
     name: r'PF',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1423,7 +1423,7 @@ class LinkGeoTargeting {
     
     name: r'TF',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1435,7 +1435,7 @@ class LinkGeoTargeting {
     
     name: r'GA',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1447,7 +1447,7 @@ class LinkGeoTargeting {
     
     name: r'GM',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1459,7 +1459,7 @@ class LinkGeoTargeting {
     
     name: r'GE',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1471,7 +1471,7 @@ class LinkGeoTargeting {
     
     name: r'DE',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1483,7 +1483,7 @@ class LinkGeoTargeting {
     
     name: r'GH',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1495,7 +1495,7 @@ class LinkGeoTargeting {
     
     name: r'GI',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1507,7 +1507,7 @@ class LinkGeoTargeting {
     
     name: r'GR',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1519,7 +1519,7 @@ class LinkGeoTargeting {
     
     name: r'GL',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1531,7 +1531,7 @@ class LinkGeoTargeting {
     
     name: r'GD',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1543,7 +1543,7 @@ class LinkGeoTargeting {
     
     name: r'GP',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1555,7 +1555,7 @@ class LinkGeoTargeting {
     
     name: r'GU',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1567,7 +1567,7 @@ class LinkGeoTargeting {
     
     name: r'GT',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1579,7 +1579,7 @@ class LinkGeoTargeting {
     
     name: r'GN',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1591,7 +1591,7 @@ class LinkGeoTargeting {
     
     name: r'GW',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1603,7 +1603,7 @@ class LinkGeoTargeting {
     
     name: r'GY',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1615,7 +1615,7 @@ class LinkGeoTargeting {
     
     name: r'HT',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1627,7 +1627,7 @@ class LinkGeoTargeting {
     
     name: r'HM',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1639,7 +1639,7 @@ class LinkGeoTargeting {
     
     name: r'VA',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1651,7 +1651,7 @@ class LinkGeoTargeting {
     
     name: r'HN',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1663,7 +1663,7 @@ class LinkGeoTargeting {
     
     name: r'HK',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1675,7 +1675,7 @@ class LinkGeoTargeting {
     
     name: r'HU',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1687,7 +1687,7 @@ class LinkGeoTargeting {
     
     name: r'IS',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1699,7 +1699,7 @@ class LinkGeoTargeting {
     
     name: r'IN',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1711,7 +1711,7 @@ class LinkGeoTargeting {
     
     name: r'ID',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1723,7 +1723,7 @@ class LinkGeoTargeting {
     
     name: r'IR',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1735,7 +1735,7 @@ class LinkGeoTargeting {
     
     name: r'IQ',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1747,7 +1747,7 @@ class LinkGeoTargeting {
     
     name: r'IE',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1759,7 +1759,7 @@ class LinkGeoTargeting {
     
     name: r'IL',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1771,7 +1771,7 @@ class LinkGeoTargeting {
     
     name: r'IT',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1783,7 +1783,7 @@ class LinkGeoTargeting {
     
     name: r'JM',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1795,7 +1795,7 @@ class LinkGeoTargeting {
     
     name: r'JP',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1807,7 +1807,7 @@ class LinkGeoTargeting {
     
     name: r'JO',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1819,7 +1819,7 @@ class LinkGeoTargeting {
     
     name: r'KZ',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1831,7 +1831,7 @@ class LinkGeoTargeting {
     
     name: r'KE',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1843,7 +1843,7 @@ class LinkGeoTargeting {
     
     name: r'KI',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1855,7 +1855,7 @@ class LinkGeoTargeting {
     
     name: r'KP',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1867,7 +1867,7 @@ class LinkGeoTargeting {
     
     name: r'KR',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1879,7 +1879,7 @@ class LinkGeoTargeting {
     
     name: r'KW',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1891,7 +1891,7 @@ class LinkGeoTargeting {
     
     name: r'KG',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1903,7 +1903,7 @@ class LinkGeoTargeting {
     
     name: r'LA',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1915,7 +1915,7 @@ class LinkGeoTargeting {
     
     name: r'LV',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1927,7 +1927,7 @@ class LinkGeoTargeting {
     
     name: r'LB',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1939,7 +1939,7 @@ class LinkGeoTargeting {
     
     name: r'LS',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1951,7 +1951,7 @@ class LinkGeoTargeting {
     
     name: r'LR',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1963,7 +1963,7 @@ class LinkGeoTargeting {
     
     name: r'LY',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1975,7 +1975,7 @@ class LinkGeoTargeting {
     
     name: r'LI',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1987,7 +1987,7 @@ class LinkGeoTargeting {
     
     name: r'LT',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -1999,7 +1999,7 @@ class LinkGeoTargeting {
     
     name: r'LU',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2011,7 +2011,7 @@ class LinkGeoTargeting {
     
     name: r'MO',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2023,7 +2023,7 @@ class LinkGeoTargeting {
     
     name: r'MG',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2035,7 +2035,7 @@ class LinkGeoTargeting {
     
     name: r'MW',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2047,7 +2047,7 @@ class LinkGeoTargeting {
     
     name: r'MY',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2059,7 +2059,7 @@ class LinkGeoTargeting {
     
     name: r'MV',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2071,7 +2071,7 @@ class LinkGeoTargeting {
     
     name: r'ML',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2083,7 +2083,7 @@ class LinkGeoTargeting {
     
     name: r'MT',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2095,7 +2095,7 @@ class LinkGeoTargeting {
     
     name: r'MH',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2107,7 +2107,7 @@ class LinkGeoTargeting {
     
     name: r'MQ',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2119,7 +2119,7 @@ class LinkGeoTargeting {
     
     name: r'MR',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2131,7 +2131,7 @@ class LinkGeoTargeting {
     
     name: r'MU',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2143,7 +2143,7 @@ class LinkGeoTargeting {
     
     name: r'YT',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2155,7 +2155,7 @@ class LinkGeoTargeting {
     
     name: r'MX',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2167,7 +2167,7 @@ class LinkGeoTargeting {
     
     name: r'FM',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2179,7 +2179,7 @@ class LinkGeoTargeting {
     
     name: r'MD',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2191,7 +2191,7 @@ class LinkGeoTargeting {
     
     name: r'MC',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2203,7 +2203,7 @@ class LinkGeoTargeting {
     
     name: r'MN',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2215,7 +2215,7 @@ class LinkGeoTargeting {
     
     name: r'MS',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2227,7 +2227,7 @@ class LinkGeoTargeting {
     
     name: r'MA',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2239,7 +2239,7 @@ class LinkGeoTargeting {
     
     name: r'MZ',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2251,7 +2251,7 @@ class LinkGeoTargeting {
     
     name: r'MM',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2263,7 +2263,7 @@ class LinkGeoTargeting {
     
     name: r'NA',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2275,7 +2275,7 @@ class LinkGeoTargeting {
     
     name: r'NR',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2287,7 +2287,7 @@ class LinkGeoTargeting {
     
     name: r'NP',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2299,7 +2299,7 @@ class LinkGeoTargeting {
     
     name: r'NL',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2311,7 +2311,7 @@ class LinkGeoTargeting {
     
     name: r'NC',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2323,7 +2323,7 @@ class LinkGeoTargeting {
     
     name: r'NZ',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2335,7 +2335,7 @@ class LinkGeoTargeting {
     
     name: r'NI',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2347,7 +2347,7 @@ class LinkGeoTargeting {
     
     name: r'NE',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2359,7 +2359,7 @@ class LinkGeoTargeting {
     
     name: r'NG',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2371,7 +2371,7 @@ class LinkGeoTargeting {
     
     name: r'NU',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2383,7 +2383,7 @@ class LinkGeoTargeting {
     
     name: r'NF',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2395,7 +2395,7 @@ class LinkGeoTargeting {
     
     name: r'MK',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2407,7 +2407,7 @@ class LinkGeoTargeting {
     
     name: r'MP',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2419,7 +2419,7 @@ class LinkGeoTargeting {
     
     name: r'NO',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2431,7 +2431,7 @@ class LinkGeoTargeting {
     
     name: r'OM',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2443,7 +2443,7 @@ class LinkGeoTargeting {
     
     name: r'PK',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2455,7 +2455,7 @@ class LinkGeoTargeting {
     
     name: r'PW',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2467,7 +2467,7 @@ class LinkGeoTargeting {
     
     name: r'PS',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2479,7 +2479,7 @@ class LinkGeoTargeting {
     
     name: r'PA',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2491,7 +2491,7 @@ class LinkGeoTargeting {
     
     name: r'PG',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2503,7 +2503,7 @@ class LinkGeoTargeting {
     
     name: r'PY',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2515,7 +2515,7 @@ class LinkGeoTargeting {
     
     name: r'PE',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2527,7 +2527,7 @@ class LinkGeoTargeting {
     
     name: r'PH',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2539,7 +2539,7 @@ class LinkGeoTargeting {
     
     name: r'PN',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2551,7 +2551,7 @@ class LinkGeoTargeting {
     
     name: r'PL',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2563,7 +2563,7 @@ class LinkGeoTargeting {
     
     name: r'PT',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2575,7 +2575,7 @@ class LinkGeoTargeting {
     
     name: r'PR',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2587,7 +2587,7 @@ class LinkGeoTargeting {
     
     name: r'QA',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2599,7 +2599,7 @@ class LinkGeoTargeting {
     
     name: r'RE',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2611,7 +2611,7 @@ class LinkGeoTargeting {
     
     name: r'RO',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2623,7 +2623,7 @@ class LinkGeoTargeting {
     
     name: r'RU',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2635,7 +2635,7 @@ class LinkGeoTargeting {
     
     name: r'RW',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2647,7 +2647,7 @@ class LinkGeoTargeting {
     
     name: r'SH',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2659,7 +2659,7 @@ class LinkGeoTargeting {
     
     name: r'KN',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2671,7 +2671,7 @@ class LinkGeoTargeting {
     
     name: r'LC',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2683,7 +2683,7 @@ class LinkGeoTargeting {
     
     name: r'PM',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2695,7 +2695,7 @@ class LinkGeoTargeting {
     
     name: r'VC',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2707,7 +2707,7 @@ class LinkGeoTargeting {
     
     name: r'WS',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2719,7 +2719,7 @@ class LinkGeoTargeting {
     
     name: r'SM',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2731,7 +2731,7 @@ class LinkGeoTargeting {
     
     name: r'ST',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2743,7 +2743,7 @@ class LinkGeoTargeting {
     
     name: r'SA',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2755,7 +2755,7 @@ class LinkGeoTargeting {
     
     name: r'SN',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2767,7 +2767,7 @@ class LinkGeoTargeting {
     
     name: r'SC',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2779,7 +2779,7 @@ class LinkGeoTargeting {
     
     name: r'SL',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2791,7 +2791,7 @@ class LinkGeoTargeting {
     
     name: r'SG',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2803,7 +2803,7 @@ class LinkGeoTargeting {
     
     name: r'SK',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2815,7 +2815,7 @@ class LinkGeoTargeting {
     
     name: r'SI',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2827,7 +2827,7 @@ class LinkGeoTargeting {
     
     name: r'SB',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2839,7 +2839,7 @@ class LinkGeoTargeting {
     
     name: r'SO',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2851,7 +2851,7 @@ class LinkGeoTargeting {
     
     name: r'ZA',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2863,7 +2863,7 @@ class LinkGeoTargeting {
     
     name: r'GS',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2875,7 +2875,7 @@ class LinkGeoTargeting {
     
     name: r'ES',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2887,7 +2887,7 @@ class LinkGeoTargeting {
     
     name: r'LK',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2899,7 +2899,7 @@ class LinkGeoTargeting {
     
     name: r'SD',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2911,7 +2911,7 @@ class LinkGeoTargeting {
     
     name: r'SR',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2923,7 +2923,7 @@ class LinkGeoTargeting {
     
     name: r'SJ',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2935,7 +2935,7 @@ class LinkGeoTargeting {
     
     name: r'SZ',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2947,7 +2947,7 @@ class LinkGeoTargeting {
     
     name: r'SE',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2959,7 +2959,7 @@ class LinkGeoTargeting {
     
     name: r'CH',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2971,7 +2971,7 @@ class LinkGeoTargeting {
     
     name: r'SY',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2983,7 +2983,7 @@ class LinkGeoTargeting {
     
     name: r'TW',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -2995,7 +2995,7 @@ class LinkGeoTargeting {
     
     name: r'TJ',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3007,7 +3007,7 @@ class LinkGeoTargeting {
     
     name: r'TZ',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3019,7 +3019,7 @@ class LinkGeoTargeting {
     
     name: r'TH',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3031,7 +3031,7 @@ class LinkGeoTargeting {
     
     name: r'TL',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3043,7 +3043,7 @@ class LinkGeoTargeting {
     
     name: r'TG',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3055,7 +3055,7 @@ class LinkGeoTargeting {
     
     name: r'TK',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3067,7 +3067,7 @@ class LinkGeoTargeting {
     
     name: r'TO',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3079,7 +3079,7 @@ class LinkGeoTargeting {
     
     name: r'TT',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3091,7 +3091,7 @@ class LinkGeoTargeting {
     
     name: r'TN',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3103,7 +3103,7 @@ class LinkGeoTargeting {
     
     name: r'TR',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3115,7 +3115,7 @@ class LinkGeoTargeting {
     
     name: r'TM',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3127,7 +3127,7 @@ class LinkGeoTargeting {
     
     name: r'TC',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3139,7 +3139,7 @@ class LinkGeoTargeting {
     
     name: r'TV',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3151,7 +3151,7 @@ class LinkGeoTargeting {
     
     name: r'UG',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3163,7 +3163,7 @@ class LinkGeoTargeting {
     
     name: r'UA',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3175,7 +3175,7 @@ class LinkGeoTargeting {
     
     name: r'AE',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3187,7 +3187,7 @@ class LinkGeoTargeting {
     
     name: r'GB',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3199,7 +3199,7 @@ class LinkGeoTargeting {
     
     name: r'US',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3211,7 +3211,7 @@ class LinkGeoTargeting {
     
     name: r'UM',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3223,7 +3223,7 @@ class LinkGeoTargeting {
     
     name: r'UY',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3235,7 +3235,7 @@ class LinkGeoTargeting {
     
     name: r'UZ',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3247,7 +3247,7 @@ class LinkGeoTargeting {
     
     name: r'VU',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3259,7 +3259,7 @@ class LinkGeoTargeting {
     
     name: r'VE',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3271,7 +3271,7 @@ class LinkGeoTargeting {
     
     name: r'VN',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3283,7 +3283,7 @@ class LinkGeoTargeting {
     
     name: r'VG',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3295,7 +3295,7 @@ class LinkGeoTargeting {
     
     name: r'VI',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3307,7 +3307,7 @@ class LinkGeoTargeting {
     
     name: r'WF',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3319,7 +3319,7 @@ class LinkGeoTargeting {
     
     name: r'EH',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3331,7 +3331,7 @@ class LinkGeoTargeting {
     
     name: r'YE',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3343,7 +3343,7 @@ class LinkGeoTargeting {
     
     name: r'ZM',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3355,7 +3355,7 @@ class LinkGeoTargeting {
     
     name: r'ZW',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3367,7 +3367,7 @@ class LinkGeoTargeting {
     
     name: r'AX',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3379,7 +3379,7 @@ class LinkGeoTargeting {
     
     name: r'BQ',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3391,7 +3391,7 @@ class LinkGeoTargeting {
     
     name: r'CW',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3403,7 +3403,7 @@ class LinkGeoTargeting {
     
     name: r'GG',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3415,7 +3415,7 @@ class LinkGeoTargeting {
     
     name: r'IM',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3427,7 +3427,7 @@ class LinkGeoTargeting {
     
     name: r'JE',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3439,7 +3439,7 @@ class LinkGeoTargeting {
     
     name: r'ME',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3451,7 +3451,7 @@ class LinkGeoTargeting {
     
     name: r'BL',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3463,7 +3463,7 @@ class LinkGeoTargeting {
     
     name: r'MF',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3475,7 +3475,7 @@ class LinkGeoTargeting {
     
     name: r'RS',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3487,7 +3487,7 @@ class LinkGeoTargeting {
     
     name: r'SX',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3499,7 +3499,7 @@ class LinkGeoTargeting {
     
     name: r'SS',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3511,7 +3511,7 @@ class LinkGeoTargeting {
     
     name: r'XK',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -3519,511 +3519,513 @@ class LinkGeoTargeting {
 
 
 
-  @override
-  bool operator ==(Object other) => identical(this, other) || other is LinkGeoTargeting &&
-     other.AF == AF &&
-     other.AL == AL &&
-     other.DZ == DZ &&
-     other.AS == AS &&
-     other.AD == AD &&
-     other.AO == AO &&
-     other.AI == AI &&
-     other.AQ == AQ &&
-     other.AG == AG &&
-     other.AR == AR &&
-     other.AM == AM &&
-     other.AW == AW &&
-     other.AU == AU &&
-     other.AT == AT &&
-     other.AZ == AZ &&
-     other.BS == BS &&
-     other.BH == BH &&
-     other.BD == BD &&
-     other.BB == BB &&
-     other.BY == BY &&
-     other.BE == BE &&
-     other.BZ == BZ &&
-     other.BJ == BJ &&
-     other.BM == BM &&
-     other.BT == BT &&
-     other.BO == BO &&
-     other.BA == BA &&
-     other.BW == BW &&
-     other.BV == BV &&
-     other.BR == BR &&
-     other.IO == IO &&
-     other.BN == BN &&
-     other.BG == BG &&
-     other.BF == BF &&
-     other.BI == BI &&
-     other.KH == KH &&
-     other.CM == CM &&
-     other.CA == CA &&
-     other.CV == CV &&
-     other.KY == KY &&
-     other.CF == CF &&
-     other.TD == TD &&
-     other.CL == CL &&
-     other.CN == CN &&
-     other.CX == CX &&
-     other.CC == CC &&
-     other.CO == CO &&
-     other.KM == KM &&
-     other.CG == CG &&
-     other.CD == CD &&
-     other.CK == CK &&
-     other.CR == CR &&
-     other.CI == CI &&
-     other.HR == HR &&
-     other.CU == CU &&
-     other.CY == CY &&
-     other.CZ == CZ &&
-     other.DK == DK &&
-     other.DJ == DJ &&
-     other.DM == DM &&
-     other.DO == DO &&
-     other.EC == EC &&
-     other.EG == EG &&
-     other.SV == SV &&
-     other.GQ == GQ &&
-     other.ER == ER &&
-     other.EE == EE &&
-     other.ET == ET &&
-     other.FK == FK &&
-     other.FO == FO &&
-     other.FJ == FJ &&
-     other.FI == FI &&
-     other.FR == FR &&
-     other.GF == GF &&
-     other.PF == PF &&
-     other.TF == TF &&
-     other.GA == GA &&
-     other.GM == GM &&
-     other.GE == GE &&
-     other.DE == DE &&
-     other.GH == GH &&
-     other.GI == GI &&
-     other.GR == GR &&
-     other.GL == GL &&
-     other.GD == GD &&
-     other.GP == GP &&
-     other.GU == GU &&
-     other.GT == GT &&
-     other.GN == GN &&
-     other.GW == GW &&
-     other.GY == GY &&
-     other.HT == HT &&
-     other.HM == HM &&
-     other.VA == VA &&
-     other.HN == HN &&
-     other.HK == HK &&
-     other.HU == HU &&
-     other.IS == IS &&
-     other.IN == IN &&
-     other.ID == ID &&
-     other.IR == IR &&
-     other.IQ == IQ &&
-     other.IE == IE &&
-     other.IL == IL &&
-     other.IT == IT &&
-     other.JM == JM &&
-     other.JP == JP &&
-     other.JO == JO &&
-     other.KZ == KZ &&
-     other.KE == KE &&
-     other.KI == KI &&
-     other.KP == KP &&
-     other.KR == KR &&
-     other.KW == KW &&
-     other.KG == KG &&
-     other.LA == LA &&
-     other.LV == LV &&
-     other.LB == LB &&
-     other.LS == LS &&
-     other.LR == LR &&
-     other.LY == LY &&
-     other.LI == LI &&
-     other.LT == LT &&
-     other.LU == LU &&
-     other.MO == MO &&
-     other.MG == MG &&
-     other.MW == MW &&
-     other.MY == MY &&
-     other.MV == MV &&
-     other.ML == ML &&
-     other.MT == MT &&
-     other.MH == MH &&
-     other.MQ == MQ &&
-     other.MR == MR &&
-     other.MU == MU &&
-     other.YT == YT &&
-     other.MX == MX &&
-     other.FM == FM &&
-     other.MD == MD &&
-     other.MC == MC &&
-     other.MN == MN &&
-     other.MS == MS &&
-     other.MA == MA &&
-     other.MZ == MZ &&
-     other.MM == MM &&
-     other.NA == NA &&
-     other.NR == NR &&
-     other.NP == NP &&
-     other.NL == NL &&
-     other.NC == NC &&
-     other.NZ == NZ &&
-     other.NI == NI &&
-     other.NE == NE &&
-     other.NG == NG &&
-     other.NU == NU &&
-     other.NF == NF &&
-     other.MK == MK &&
-     other.MP == MP &&
-     other.NO == NO &&
-     other.OM == OM &&
-     other.PK == PK &&
-     other.PW == PW &&
-     other.PS == PS &&
-     other.PA == PA &&
-     other.PG == PG &&
-     other.PY == PY &&
-     other.PE == PE &&
-     other.PH == PH &&
-     other.PN == PN &&
-     other.PL == PL &&
-     other.PT == PT &&
-     other.PR == PR &&
-     other.QA == QA &&
-     other.RE == RE &&
-     other.RO == RO &&
-     other.RU == RU &&
-     other.RW == RW &&
-     other.SH == SH &&
-     other.KN == KN &&
-     other.LC == LC &&
-     other.PM == PM &&
-     other.VC == VC &&
-     other.WS == WS &&
-     other.SM == SM &&
-     other.ST == ST &&
-     other.SA == SA &&
-     other.SN == SN &&
-     other.SC == SC &&
-     other.SL == SL &&
-     other.SG == SG &&
-     other.SK == SK &&
-     other.SI == SI &&
-     other.SB == SB &&
-     other.SO == SO &&
-     other.ZA == ZA &&
-     other.GS == GS &&
-     other.ES == ES &&
-     other.LK == LK &&
-     other.SD == SD &&
-     other.SR == SR &&
-     other.SJ == SJ &&
-     other.SZ == SZ &&
-     other.SE == SE &&
-     other.CH == CH &&
-     other.SY == SY &&
-     other.TW == TW &&
-     other.TJ == TJ &&
-     other.TZ == TZ &&
-     other.TH == TH &&
-     other.TL == TL &&
-     other.TG == TG &&
-     other.TK == TK &&
-     other.TO == TO &&
-     other.TT == TT &&
-     other.TN == TN &&
-     other.TR == TR &&
-     other.TM == TM &&
-     other.TC == TC &&
-     other.TV == TV &&
-     other.UG == UG &&
-     other.UA == UA &&
-     other.AE == AE &&
-     other.GB == GB &&
-     other.US == US &&
-     other.UM == UM &&
-     other.UY == UY &&
-     other.UZ == UZ &&
-     other.VU == VU &&
-     other.VE == VE &&
-     other.VN == VN &&
-     other.VG == VG &&
-     other.VI == VI &&
-     other.WF == WF &&
-     other.EH == EH &&
-     other.YE == YE &&
-     other.ZM == ZM &&
-     other.ZW == ZW &&
-     other.AX == AX &&
-     other.BQ == BQ &&
-     other.CW == CW &&
-     other.GG == GG &&
-     other.IM == IM &&
-     other.JE == JE &&
-     other.ME == ME &&
-     other.BL == BL &&
-     other.MF == MF &&
-     other.RS == RS &&
-     other.SX == SX &&
-     other.SS == SS &&
-     other.XK == XK;
 
-  @override
-  int get hashCode =>
-    AF.hashCode +
-    AL.hashCode +
-    DZ.hashCode +
-    AS.hashCode +
-    AD.hashCode +
-    AO.hashCode +
-    AI.hashCode +
-    AQ.hashCode +
-    AG.hashCode +
-    AR.hashCode +
-    AM.hashCode +
-    AW.hashCode +
-    AU.hashCode +
-    AT.hashCode +
-    AZ.hashCode +
-    BS.hashCode +
-    BH.hashCode +
-    BD.hashCode +
-    BB.hashCode +
-    BY.hashCode +
-    BE.hashCode +
-    BZ.hashCode +
-    BJ.hashCode +
-    BM.hashCode +
-    BT.hashCode +
-    BO.hashCode +
-    BA.hashCode +
-    BW.hashCode +
-    BV.hashCode +
-    BR.hashCode +
-    IO.hashCode +
-    BN.hashCode +
-    BG.hashCode +
-    BF.hashCode +
-    BI.hashCode +
-    KH.hashCode +
-    CM.hashCode +
-    CA.hashCode +
-    CV.hashCode +
-    KY.hashCode +
-    CF.hashCode +
-    TD.hashCode +
-    CL.hashCode +
-    CN.hashCode +
-    CX.hashCode +
-    CC.hashCode +
-    CO.hashCode +
-    KM.hashCode +
-    CG.hashCode +
-    CD.hashCode +
-    CK.hashCode +
-    CR.hashCode +
-    CI.hashCode +
-    HR.hashCode +
-    CU.hashCode +
-    CY.hashCode +
-    CZ.hashCode +
-    DK.hashCode +
-    DJ.hashCode +
-    DM.hashCode +
-    DO.hashCode +
-    EC.hashCode +
-    EG.hashCode +
-    SV.hashCode +
-    GQ.hashCode +
-    ER.hashCode +
-    EE.hashCode +
-    ET.hashCode +
-    FK.hashCode +
-    FO.hashCode +
-    FJ.hashCode +
-    FI.hashCode +
-    FR.hashCode +
-    GF.hashCode +
-    PF.hashCode +
-    TF.hashCode +
-    GA.hashCode +
-    GM.hashCode +
-    GE.hashCode +
-    DE.hashCode +
-    GH.hashCode +
-    GI.hashCode +
-    GR.hashCode +
-    GL.hashCode +
-    GD.hashCode +
-    GP.hashCode +
-    GU.hashCode +
-    GT.hashCode +
-    GN.hashCode +
-    GW.hashCode +
-    GY.hashCode +
-    HT.hashCode +
-    HM.hashCode +
-    VA.hashCode +
-    HN.hashCode +
-    HK.hashCode +
-    HU.hashCode +
-    IS.hashCode +
-    IN.hashCode +
-    ID.hashCode +
-    IR.hashCode +
-    IQ.hashCode +
-    IE.hashCode +
-    IL.hashCode +
-    IT.hashCode +
-    JM.hashCode +
-    JP.hashCode +
-    JO.hashCode +
-    KZ.hashCode +
-    KE.hashCode +
-    KI.hashCode +
-    KP.hashCode +
-    KR.hashCode +
-    KW.hashCode +
-    KG.hashCode +
-    LA.hashCode +
-    LV.hashCode +
-    LB.hashCode +
-    LS.hashCode +
-    LR.hashCode +
-    LY.hashCode +
-    LI.hashCode +
-    LT.hashCode +
-    LU.hashCode +
-    MO.hashCode +
-    MG.hashCode +
-    MW.hashCode +
-    MY.hashCode +
-    MV.hashCode +
-    ML.hashCode +
-    MT.hashCode +
-    MH.hashCode +
-    MQ.hashCode +
-    MR.hashCode +
-    MU.hashCode +
-    YT.hashCode +
-    MX.hashCode +
-    FM.hashCode +
-    MD.hashCode +
-    MC.hashCode +
-    MN.hashCode +
-    MS.hashCode +
-    MA.hashCode +
-    MZ.hashCode +
-    MM.hashCode +
-    NA.hashCode +
-    NR.hashCode +
-    NP.hashCode +
-    NL.hashCode +
-    NC.hashCode +
-    NZ.hashCode +
-    NI.hashCode +
-    NE.hashCode +
-    NG.hashCode +
-    NU.hashCode +
-    NF.hashCode +
-    MK.hashCode +
-    MP.hashCode +
-    NO.hashCode +
-    OM.hashCode +
-    PK.hashCode +
-    PW.hashCode +
-    PS.hashCode +
-    PA.hashCode +
-    PG.hashCode +
-    PY.hashCode +
-    PE.hashCode +
-    PH.hashCode +
-    PN.hashCode +
-    PL.hashCode +
-    PT.hashCode +
-    PR.hashCode +
-    QA.hashCode +
-    RE.hashCode +
-    RO.hashCode +
-    RU.hashCode +
-    RW.hashCode +
-    SH.hashCode +
-    KN.hashCode +
-    LC.hashCode +
-    PM.hashCode +
-    VC.hashCode +
-    WS.hashCode +
-    SM.hashCode +
-    ST.hashCode +
-    SA.hashCode +
-    SN.hashCode +
-    SC.hashCode +
-    SL.hashCode +
-    SG.hashCode +
-    SK.hashCode +
-    SI.hashCode +
-    SB.hashCode +
-    SO.hashCode +
-    ZA.hashCode +
-    GS.hashCode +
-    ES.hashCode +
-    LK.hashCode +
-    SD.hashCode +
-    SR.hashCode +
-    SJ.hashCode +
-    SZ.hashCode +
-    SE.hashCode +
-    CH.hashCode +
-    SY.hashCode +
-    TW.hashCode +
-    TJ.hashCode +
-    TZ.hashCode +
-    TH.hashCode +
-    TL.hashCode +
-    TG.hashCode +
-    TK.hashCode +
-    TO.hashCode +
-    TT.hashCode +
-    TN.hashCode +
-    TR.hashCode +
-    TM.hashCode +
-    TC.hashCode +
-    TV.hashCode +
-    UG.hashCode +
-    UA.hashCode +
-    AE.hashCode +
-    GB.hashCode +
-    US.hashCode +
-    UM.hashCode +
-    UY.hashCode +
-    UZ.hashCode +
-    VU.hashCode +
-    VE.hashCode +
-    VN.hashCode +
-    VG.hashCode +
-    VI.hashCode +
-    WF.hashCode +
-    EH.hashCode +
-    YE.hashCode +
-    ZM.hashCode +
-    ZW.hashCode +
-    AX.hashCode +
-    BQ.hashCode +
-    CW.hashCode +
-    GG.hashCode +
-    IM.hashCode +
-    JE.hashCode +
-    ME.hashCode +
-    BL.hashCode +
-    MF.hashCode +
-    RS.hashCode +
-    SX.hashCode +
-    SS.hashCode +
-    XK.hashCode;
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is LinkGeoTargeting &&
+      other.AF == AF &&
+      other.AL == AL &&
+      other.DZ == DZ &&
+      other.AS == AS &&
+      other.AD == AD &&
+      other.AO == AO &&
+      other.AI == AI &&
+      other.AQ == AQ &&
+      other.AG == AG &&
+      other.AR == AR &&
+      other.AM == AM &&
+      other.AW == AW &&
+      other.AU == AU &&
+      other.AT == AT &&
+      other.AZ == AZ &&
+      other.BS == BS &&
+      other.BH == BH &&
+      other.BD == BD &&
+      other.BB == BB &&
+      other.BY == BY &&
+      other.BE == BE &&
+      other.BZ == BZ &&
+      other.BJ == BJ &&
+      other.BM == BM &&
+      other.BT == BT &&
+      other.BO == BO &&
+      other.BA == BA &&
+      other.BW == BW &&
+      other.BV == BV &&
+      other.BR == BR &&
+      other.IO == IO &&
+      other.BN == BN &&
+      other.BG == BG &&
+      other.BF == BF &&
+      other.BI == BI &&
+      other.KH == KH &&
+      other.CM == CM &&
+      other.CA == CA &&
+      other.CV == CV &&
+      other.KY == KY &&
+      other.CF == CF &&
+      other.TD == TD &&
+      other.CL == CL &&
+      other.CN == CN &&
+      other.CX == CX &&
+      other.CC == CC &&
+      other.CO == CO &&
+      other.KM == KM &&
+      other.CG == CG &&
+      other.CD == CD &&
+      other.CK == CK &&
+      other.CR == CR &&
+      other.CI == CI &&
+      other.HR == HR &&
+      other.CU == CU &&
+      other.CY == CY &&
+      other.CZ == CZ &&
+      other.DK == DK &&
+      other.DJ == DJ &&
+      other.DM == DM &&
+      other.DO == DO &&
+      other.EC == EC &&
+      other.EG == EG &&
+      other.SV == SV &&
+      other.GQ == GQ &&
+      other.ER == ER &&
+      other.EE == EE &&
+      other.ET == ET &&
+      other.FK == FK &&
+      other.FO == FO &&
+      other.FJ == FJ &&
+      other.FI == FI &&
+      other.FR == FR &&
+      other.GF == GF &&
+      other.PF == PF &&
+      other.TF == TF &&
+      other.GA == GA &&
+      other.GM == GM &&
+      other.GE == GE &&
+      other.DE == DE &&
+      other.GH == GH &&
+      other.GI == GI &&
+      other.GR == GR &&
+      other.GL == GL &&
+      other.GD == GD &&
+      other.GP == GP &&
+      other.GU == GU &&
+      other.GT == GT &&
+      other.GN == GN &&
+      other.GW == GW &&
+      other.GY == GY &&
+      other.HT == HT &&
+      other.HM == HM &&
+      other.VA == VA &&
+      other.HN == HN &&
+      other.HK == HK &&
+      other.HU == HU &&
+      other.IS == IS &&
+      other.IN == IN &&
+      other.ID == ID &&
+      other.IR == IR &&
+      other.IQ == IQ &&
+      other.IE == IE &&
+      other.IL == IL &&
+      other.IT == IT &&
+      other.JM == JM &&
+      other.JP == JP &&
+      other.JO == JO &&
+      other.KZ == KZ &&
+      other.KE == KE &&
+      other.KI == KI &&
+      other.KP == KP &&
+      other.KR == KR &&
+      other.KW == KW &&
+      other.KG == KG &&
+      other.LA == LA &&
+      other.LV == LV &&
+      other.LB == LB &&
+      other.LS == LS &&
+      other.LR == LR &&
+      other.LY == LY &&
+      other.LI == LI &&
+      other.LT == LT &&
+      other.LU == LU &&
+      other.MO == MO &&
+      other.MG == MG &&
+      other.MW == MW &&
+      other.MY == MY &&
+      other.MV == MV &&
+      other.ML == ML &&
+      other.MT == MT &&
+      other.MH == MH &&
+      other.MQ == MQ &&
+      other.MR == MR &&
+      other.MU == MU &&
+      other.YT == YT &&
+      other.MX == MX &&
+      other.FM == FM &&
+      other.MD == MD &&
+      other.MC == MC &&
+      other.MN == MN &&
+      other.MS == MS &&
+      other.MA == MA &&
+      other.MZ == MZ &&
+      other.MM == MM &&
+      other.NA == NA &&
+      other.NR == NR &&
+      other.NP == NP &&
+      other.NL == NL &&
+      other.NC == NC &&
+      other.NZ == NZ &&
+      other.NI == NI &&
+      other.NE == NE &&
+      other.NG == NG &&
+      other.NU == NU &&
+      other.NF == NF &&
+      other.MK == MK &&
+      other.MP == MP &&
+      other.NO == NO &&
+      other.OM == OM &&
+      other.PK == PK &&
+      other.PW == PW &&
+      other.PS == PS &&
+      other.PA == PA &&
+      other.PG == PG &&
+      other.PY == PY &&
+      other.PE == PE &&
+      other.PH == PH &&
+      other.PN == PN &&
+      other.PL == PL &&
+      other.PT == PT &&
+      other.PR == PR &&
+      other.QA == QA &&
+      other.RE == RE &&
+      other.RO == RO &&
+      other.RU == RU &&
+      other.RW == RW &&
+      other.SH == SH &&
+      other.KN == KN &&
+      other.LC == LC &&
+      other.PM == PM &&
+      other.VC == VC &&
+      other.WS == WS &&
+      other.SM == SM &&
+      other.ST == ST &&
+      other.SA == SA &&
+      other.SN == SN &&
+      other.SC == SC &&
+      other.SL == SL &&
+      other.SG == SG &&
+      other.SK == SK &&
+      other.SI == SI &&
+      other.SB == SB &&
+      other.SO == SO &&
+      other.ZA == ZA &&
+      other.GS == GS &&
+      other.ES == ES &&
+      other.LK == LK &&
+      other.SD == SD &&
+      other.SR == SR &&
+      other.SJ == SJ &&
+      other.SZ == SZ &&
+      other.SE == SE &&
+      other.CH == CH &&
+      other.SY == SY &&
+      other.TW == TW &&
+      other.TJ == TJ &&
+      other.TZ == TZ &&
+      other.TH == TH &&
+      other.TL == TL &&
+      other.TG == TG &&
+      other.TK == TK &&
+      other.TO == TO &&
+      other.TT == TT &&
+      other.TN == TN &&
+      other.TR == TR &&
+      other.TM == TM &&
+      other.TC == TC &&
+      other.TV == TV &&
+      other.UG == UG &&
+      other.UA == UA &&
+      other.AE == AE &&
+      other.GB == GB &&
+      other.US == US &&
+      other.UM == UM &&
+      other.UY == UY &&
+      other.UZ == UZ &&
+      other.VU == VU &&
+      other.VE == VE &&
+      other.VN == VN &&
+      other.VG == VG &&
+      other.VI == VI &&
+      other.WF == WF &&
+      other.EH == EH &&
+      other.YE == YE &&
+      other.ZM == ZM &&
+      other.ZW == ZW &&
+      other.AX == AX &&
+      other.BQ == BQ &&
+      other.CW == CW &&
+      other.GG == GG &&
+      other.IM == IM &&
+      other.JE == JE &&
+      other.ME == ME &&
+      other.BL == BL &&
+      other.MF == MF &&
+      other.RS == RS &&
+      other.SX == SX &&
+      other.SS == SS &&
+      other.XK == XK;
+
+    @override
+    int get hashCode =>
+        AF.hashCode +
+        AL.hashCode +
+        DZ.hashCode +
+        AS.hashCode +
+        AD.hashCode +
+        AO.hashCode +
+        AI.hashCode +
+        AQ.hashCode +
+        AG.hashCode +
+        AR.hashCode +
+        AM.hashCode +
+        AW.hashCode +
+        AU.hashCode +
+        AT.hashCode +
+        AZ.hashCode +
+        BS.hashCode +
+        BH.hashCode +
+        BD.hashCode +
+        BB.hashCode +
+        BY.hashCode +
+        BE.hashCode +
+        BZ.hashCode +
+        BJ.hashCode +
+        BM.hashCode +
+        BT.hashCode +
+        BO.hashCode +
+        BA.hashCode +
+        BW.hashCode +
+        BV.hashCode +
+        BR.hashCode +
+        IO.hashCode +
+        BN.hashCode +
+        BG.hashCode +
+        BF.hashCode +
+        BI.hashCode +
+        KH.hashCode +
+        CM.hashCode +
+        CA.hashCode +
+        CV.hashCode +
+        KY.hashCode +
+        CF.hashCode +
+        TD.hashCode +
+        CL.hashCode +
+        CN.hashCode +
+        CX.hashCode +
+        CC.hashCode +
+        CO.hashCode +
+        KM.hashCode +
+        CG.hashCode +
+        CD.hashCode +
+        CK.hashCode +
+        CR.hashCode +
+        CI.hashCode +
+        HR.hashCode +
+        CU.hashCode +
+        CY.hashCode +
+        CZ.hashCode +
+        DK.hashCode +
+        DJ.hashCode +
+        DM.hashCode +
+        DO.hashCode +
+        EC.hashCode +
+        EG.hashCode +
+        SV.hashCode +
+        GQ.hashCode +
+        ER.hashCode +
+        EE.hashCode +
+        ET.hashCode +
+        FK.hashCode +
+        FO.hashCode +
+        FJ.hashCode +
+        FI.hashCode +
+        FR.hashCode +
+        GF.hashCode +
+        PF.hashCode +
+        TF.hashCode +
+        GA.hashCode +
+        GM.hashCode +
+        GE.hashCode +
+        DE.hashCode +
+        GH.hashCode +
+        GI.hashCode +
+        GR.hashCode +
+        GL.hashCode +
+        GD.hashCode +
+        GP.hashCode +
+        GU.hashCode +
+        GT.hashCode +
+        GN.hashCode +
+        GW.hashCode +
+        GY.hashCode +
+        HT.hashCode +
+        HM.hashCode +
+        VA.hashCode +
+        HN.hashCode +
+        HK.hashCode +
+        HU.hashCode +
+        IS.hashCode +
+        IN.hashCode +
+        ID.hashCode +
+        IR.hashCode +
+        IQ.hashCode +
+        IE.hashCode +
+        IL.hashCode +
+        IT.hashCode +
+        JM.hashCode +
+        JP.hashCode +
+        JO.hashCode +
+        KZ.hashCode +
+        KE.hashCode +
+        KI.hashCode +
+        KP.hashCode +
+        KR.hashCode +
+        KW.hashCode +
+        KG.hashCode +
+        LA.hashCode +
+        LV.hashCode +
+        LB.hashCode +
+        LS.hashCode +
+        LR.hashCode +
+        LY.hashCode +
+        LI.hashCode +
+        LT.hashCode +
+        LU.hashCode +
+        MO.hashCode +
+        MG.hashCode +
+        MW.hashCode +
+        MY.hashCode +
+        MV.hashCode +
+        ML.hashCode +
+        MT.hashCode +
+        MH.hashCode +
+        MQ.hashCode +
+        MR.hashCode +
+        MU.hashCode +
+        YT.hashCode +
+        MX.hashCode +
+        FM.hashCode +
+        MD.hashCode +
+        MC.hashCode +
+        MN.hashCode +
+        MS.hashCode +
+        MA.hashCode +
+        MZ.hashCode +
+        MM.hashCode +
+        NA.hashCode +
+        NR.hashCode +
+        NP.hashCode +
+        NL.hashCode +
+        NC.hashCode +
+        NZ.hashCode +
+        NI.hashCode +
+        NE.hashCode +
+        NG.hashCode +
+        NU.hashCode +
+        NF.hashCode +
+        MK.hashCode +
+        MP.hashCode +
+        NO.hashCode +
+        OM.hashCode +
+        PK.hashCode +
+        PW.hashCode +
+        PS.hashCode +
+        PA.hashCode +
+        PG.hashCode +
+        PY.hashCode +
+        PE.hashCode +
+        PH.hashCode +
+        PN.hashCode +
+        PL.hashCode +
+        PT.hashCode +
+        PR.hashCode +
+        QA.hashCode +
+        RE.hashCode +
+        RO.hashCode +
+        RU.hashCode +
+        RW.hashCode +
+        SH.hashCode +
+        KN.hashCode +
+        LC.hashCode +
+        PM.hashCode +
+        VC.hashCode +
+        WS.hashCode +
+        SM.hashCode +
+        ST.hashCode +
+        SA.hashCode +
+        SN.hashCode +
+        SC.hashCode +
+        SL.hashCode +
+        SG.hashCode +
+        SK.hashCode +
+        SI.hashCode +
+        SB.hashCode +
+        SO.hashCode +
+        ZA.hashCode +
+        GS.hashCode +
+        ES.hashCode +
+        LK.hashCode +
+        SD.hashCode +
+        SR.hashCode +
+        SJ.hashCode +
+        SZ.hashCode +
+        SE.hashCode +
+        CH.hashCode +
+        SY.hashCode +
+        TW.hashCode +
+        TJ.hashCode +
+        TZ.hashCode +
+        TH.hashCode +
+        TL.hashCode +
+        TG.hashCode +
+        TK.hashCode +
+        TO.hashCode +
+        TT.hashCode +
+        TN.hashCode +
+        TR.hashCode +
+        TM.hashCode +
+        TC.hashCode +
+        TV.hashCode +
+        UG.hashCode +
+        UA.hashCode +
+        AE.hashCode +
+        GB.hashCode +
+        US.hashCode +
+        UM.hashCode +
+        UY.hashCode +
+        UZ.hashCode +
+        VU.hashCode +
+        VE.hashCode +
+        VN.hashCode +
+        VG.hashCode +
+        VI.hashCode +
+        WF.hashCode +
+        EH.hashCode +
+        YE.hashCode +
+        ZM.hashCode +
+        ZW.hashCode +
+        AX.hashCode +
+        BQ.hashCode +
+        CW.hashCode +
+        GG.hashCode +
+        IM.hashCode +
+        JE.hashCode +
+        ME.hashCode +
+        BL.hashCode +
+        MF.hashCode +
+        RS.hashCode +
+        SX.hashCode +
+        SS.hashCode +
+        XK.hashCode;
 
   factory LinkGeoTargeting.fromJson(Map<String, dynamic> json) => _$LinkGeoTargetingFromJson(json);
 

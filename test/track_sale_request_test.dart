@@ -8,6 +8,12 @@ void main() {
 
   group(TrackSaleRequest, () {
     // This is the unique identifier for the customer in the client's app. This is used to track the customer's journey.
+    // String externalId (default value: '')
+    test('to test the property `externalId`', () async {
+      // TODO
+    });
+
+    // This is the unique identifier for the customer in the client's app. This is used to track the customer's journey.
     // String customerId
     test('to test the property `customerId`', () async {
       // TODO
@@ -40,6 +46,12 @@ void main() {
     // The currency of the sale. Accepts ISO 4217 currency codes.
     // String currency (default value: 'usd')
     test('to test the property `currency`', () async {
+      // TODO
+    });
+
+    // Additional metadata to be stored with the sale event.
+    // Map<String, Object> metadata
+    test('to test the property `metadata`', () async {
       // TODO
     });
 

@@ -22,7 +22,9 @@ class TrackLeadRequest {
 
     required  this.eventName,
 
-    required  this.customerId,
+     this.externalId = '',
+
+     this.customerId,
 
      this.customerName,
 
@@ -33,12 +35,12 @@ class TrackLeadRequest {
      this.metadata,
   });
 
-      /// The ID of the click in th Dub. You can read this value from `dclid` cookie.
+      /// The ID of the click in th Dub. You can read this value from `dub_id` cookie.
   @JsonKey(
     
     name: r'clickId',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -51,7 +53,7 @@ class TrackLeadRequest {
     
     name: r'eventName',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -61,14 +63,28 @@ class TrackLeadRequest {
 
       /// This is the unique identifier for the customer in the client's app. This is used to track the customer's journey.
   @JsonKey(
-    
-    name: r'customerId',
-    required: true,
-    includeIfNull: false
+    defaultValue: '',
+    name: r'externalId',
+    required: false,
+    includeIfNull: false,
   )
 
 
-  final String customerId;
+  final String? externalId;
+
+
+
+      /// This is the unique identifier for the customer in the client's app. This is used to track the customer's journey.
+  @Deprecated('customerId has been deprecated')
+  @JsonKey(
+    
+    name: r'customerId',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? customerId;
 
 
 
@@ -77,7 +93,7 @@ class TrackLeadRequest {
     
     name: r'customerName',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -90,7 +106,7 @@ class TrackLeadRequest {
     
     name: r'customerEmail',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -103,7 +119,7 @@ class TrackLeadRequest {
     
     name: r'customerAvatar',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -116,7 +132,7 @@ class TrackLeadRequest {
     
     name: r'metadata',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -124,25 +140,29 @@ class TrackLeadRequest {
 
 
 
-  @override
-  bool operator ==(Object other) => identical(this, other) || other is TrackLeadRequest &&
-     other.clickId == clickId &&
-     other.eventName == eventName &&
-     other.customerId == customerId &&
-     other.customerName == customerName &&
-     other.customerEmail == customerEmail &&
-     other.customerAvatar == customerAvatar &&
-     other.metadata == metadata;
 
-  @override
-  int get hashCode =>
-    clickId.hashCode +
-    eventName.hashCode +
-    customerId.hashCode +
-    (customerName == null ? 0 : customerName.hashCode) +
-    (customerEmail == null ? 0 : customerEmail.hashCode) +
-    (customerAvatar == null ? 0 : customerAvatar.hashCode) +
-    (metadata == null ? 0 : metadata.hashCode);
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is TrackLeadRequest &&
+      other.clickId == clickId &&
+      other.eventName == eventName &&
+      other.externalId == externalId &&
+      other.customerId == customerId &&
+      other.customerName == customerName &&
+      other.customerEmail == customerEmail &&
+      other.customerAvatar == customerAvatar &&
+      other.metadata == metadata;
+
+    @override
+    int get hashCode =>
+        clickId.hashCode +
+        eventName.hashCode +
+        externalId.hashCode +
+        (customerId == null ? 0 : customerId.hashCode) +
+        (customerName == null ? 0 : customerName.hashCode) +
+        (customerEmail == null ? 0 : customerEmail.hashCode) +
+        (customerAvatar == null ? 0 : customerAvatar.hashCode) +
+        (metadata == null ? 0 : metadata.hashCode);
 
   factory TrackLeadRequest.fromJson(Map<String, dynamic> json) => _$TrackLeadRequestFromJson(json);
 

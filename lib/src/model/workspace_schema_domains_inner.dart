@@ -21,6 +21,8 @@ class WorkspaceSchemaDomainsInner {
     required  this.slug,
 
      this.primary = false,
+
+     this.verified = false,
   });
 
       /// The domain name.
@@ -28,7 +30,7 @@ class WorkspaceSchemaDomainsInner {
     
     name: r'slug',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -41,7 +43,7 @@ class WorkspaceSchemaDomainsInner {
     defaultValue: false,
     name: r'primary',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -49,15 +51,32 @@ class WorkspaceSchemaDomainsInner {
 
 
 
-  @override
-  bool operator ==(Object other) => identical(this, other) || other is WorkspaceSchemaDomainsInner &&
-     other.slug == slug &&
-     other.primary == primary;
+      /// Whether the domain is verified.
+  @JsonKey(
+    defaultValue: false,
+    name: r'verified',
+    required: true,
+    includeIfNull: false,
+  )
 
-  @override
-  int get hashCode =>
-    slug.hashCode +
-    primary.hashCode;
+
+  final bool verified;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is WorkspaceSchemaDomainsInner &&
+      other.slug == slug &&
+      other.primary == primary &&
+      other.verified == verified;
+
+    @override
+    int get hashCode =>
+        slug.hashCode +
+        primary.hashCode +
+        verified.hashCode;
 
   factory WorkspaceSchemaDomainsInner.fromJson(Map<String, dynamic> json) => _$WorkspaceSchemaDomainsInnerFromJson(json);
 

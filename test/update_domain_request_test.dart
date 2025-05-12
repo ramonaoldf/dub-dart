@@ -13,21 +13,15 @@ void main() {
       // TODO
     });
 
-    // The type of redirect to use for this domain.
-    // String type (default value: 'redirect')
-    test('to test the property `type`', () async {
-      // TODO
-    });
-
-    // The page your users will get redirected to when they visit your domain.
-    // String target
-    test('to test the property `target`', () async {
-      // TODO
-    });
-
     // Redirect users to a specific URL when any link under this domain has expired.
     // String expiredUrl
     test('to test the property `expiredUrl`', () async {
+      // TODO
+    });
+
+    // Redirect users to a specific URL when a link under this domain doesn't exist.
+    // String notFoundUrl
+    test('to test the property `notFoundUrl`', () async {
       // TODO
     });
 
@@ -37,15 +31,15 @@ void main() {
       // TODO
     });
 
-    // Prevent search engines from indexing the domain. Defaults to `false`.
-    // bool noindex
-    test('to test the property `noindex`', () async {
+    // Provide context to your teammates in the link creation modal by showing them an example of a link to be shortened.
+    // String placeholder
+    test('to test the property `placeholder`', () async {
       // TODO
     });
 
-    // Provide context to your teammates in the link creation modal by showing them an example of a link to be shortened.
-    // String placeholder (default value: 'https://dub.co/help/article/what-is-dub')
-    test('to test the property `placeholder`', () async {
+    // The logo of the domain.
+    // String logo
+    test('to test the property `logo`', () async {
       // TODO
     });
 

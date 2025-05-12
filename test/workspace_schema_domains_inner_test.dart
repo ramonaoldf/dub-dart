@@ -19,5 +19,11 @@ void main() {
       // TODO
     });
 
+    // Whether the domain is verified.
+    // bool verified (default value: false)
+    test('to test the property `verified`', () async {
+      // TODO
+    });
+
   });
 }

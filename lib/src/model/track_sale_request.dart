@@ -18,7 +18,9 @@ class TrackSaleRequest {
   /// Returns a new [TrackSaleRequest] instance.
   TrackSaleRequest({
 
-    required  this.customerId,
+     this.externalId = '',
+
+     this.customerId,
 
     required  this.amount,
 
@@ -29,18 +31,34 @@ class TrackSaleRequest {
      this.invoiceId,
 
      this.currency = 'usd',
+
+     this.metadata,
   });
 
       /// This is the unique identifier for the customer in the client's app. This is used to track the customer's journey.
   @JsonKey(
-    
-    name: r'customerId',
-    required: true,
-    includeIfNull: false
+    defaultValue: '',
+    name: r'externalId',
+    required: false,
+    includeIfNull: false,
   )
 
 
-  final String customerId;
+  final String? externalId;
+
+
+
+      /// This is the unique identifier for the customer in the client's app. This is used to track the customer's journey.
+  @Deprecated('customerId has been deprecated')
+  @JsonKey(
+    
+    name: r'customerId',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  final String? customerId;
 
 
 
@@ -50,7 +68,7 @@ class TrackSaleRequest {
     
     name: r'amount',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -63,7 +81,8 @@ class TrackSaleRequest {
     
     name: r'paymentProcessor',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
+  unknownEnumValue: TrackSaleRequestPaymentProcessorEnum.unknownDefaultOpenApi,
   )
 
 
@@ -76,7 +95,7 @@ class TrackSaleRequest {
     defaultValue: 'Purchase',
     name: r'eventName',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -89,7 +108,7 @@ class TrackSaleRequest {
     
     name: r'invoiceId',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -102,7 +121,7 @@ class TrackSaleRequest {
     defaultValue: 'usd',
     name: r'currency',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -110,23 +129,42 @@ class TrackSaleRequest {
 
 
 
-  @override
-  bool operator ==(Object other) => identical(this, other) || other is TrackSaleRequest &&
-     other.customerId == customerId &&
-     other.amount == amount &&
-     other.paymentProcessor == paymentProcessor &&
-     other.eventName == eventName &&
-     other.invoiceId == invoiceId &&
-     other.currency == currency;
+      /// Additional metadata to be stored with the sale event.
+  @JsonKey(
+    
+    name: r'metadata',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @override
-  int get hashCode =>
-    customerId.hashCode +
-    amount.hashCode +
-    paymentProcessor.hashCode +
-    eventName.hashCode +
-    (invoiceId == null ? 0 : invoiceId.hashCode) +
-    currency.hashCode;
+
+  final Map<String, Object>? metadata;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is TrackSaleRequest &&
+      other.externalId == externalId &&
+      other.customerId == customerId &&
+      other.amount == amount &&
+      other.paymentProcessor == paymentProcessor &&
+      other.eventName == eventName &&
+      other.invoiceId == invoiceId &&
+      other.currency == currency &&
+      other.metadata == metadata;
+
+    @override
+    int get hashCode =>
+        externalId.hashCode +
+        (customerId == null ? 0 : customerId.hashCode) +
+        amount.hashCode +
+        paymentProcessor.hashCode +
+        eventName.hashCode +
+        (invoiceId == null ? 0 : invoiceId.hashCode) +
+        currency.hashCode +
+        (metadata == null ? 0 : metadata.hashCode);
 
   factory TrackSaleRequest.fromJson(Map<String, dynamic> json) => _$TrackSaleRequestFromJson(json);
 
@@ -141,14 +179,25 @@ class TrackSaleRequest {
 
 /// The payment processor via which the sale was made.
 enum TrackSaleRequestPaymentProcessorEnum {
-  @JsonValue(r'stripe')
-  stripe,
-  @JsonValue(r'shopify')
-  shopify,
-  @JsonValue(r'paddle')
-  paddle,
-  @JsonValue(r'unknown_default_open_api')
-  unknownDefaultOpenApi,
+    /// The payment processor via which the sale was made.
+@JsonValue(r'stripe')
+stripe(r'stripe'),
+    /// The payment processor via which the sale was made.
+@JsonValue(r'shopify')
+shopify(r'shopify'),
+    /// The payment processor via which the sale was made.
+@JsonValue(r'paddle')
+paddle(r'paddle'),
+    /// The payment processor via which the sale was made.
+@JsonValue(r'unknown_default_open_api')
+unknownDefaultOpenApi(r'unknown_default_open_api');
+
+const TrackSaleRequestPaymentProcessorEnum(this.value);
+
+final String value;
+
+@override
+String toString() => value;
 }
 
 

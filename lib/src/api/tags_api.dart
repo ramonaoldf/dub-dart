@@ -10,15 +10,7 @@ import 'package:dub/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:dub/src/model/create_tag_request.dart';
-import 'package:dub/src/model/get_links400_response.dart';
-import 'package:dub/src/model/get_links401_response.dart';
-import 'package:dub/src/model/get_links403_response.dart';
-import 'package:dub/src/model/get_links404_response.dart';
-import 'package:dub/src/model/get_links409_response.dart';
-import 'package:dub/src/model/get_links410_response.dart';
-import 'package:dub/src/model/get_links422_response.dart';
-import 'package:dub/src/model/get_links429_response.dart';
-import 'package:dub/src/model/get_links500_response.dart';
+import 'package:dub/src/model/delete_tag200_response.dart';
 import 'package:dub/src/model/tag_schema.dart';
 
 class TagsApi {
@@ -31,8 +23,6 @@ class TagsApi {
   /// Create a new tag for the authenticated workspace.
   ///
   /// Parameters:
-  /// * [workspaceId] - The ID of the workspace.
-  /// * [projectSlug] - The slug of the project. This field is deprecated – use `workspaceId` instead.
   /// * [createTagRequest] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -44,8 +34,6 @@ class TagsApi {
   /// Returns a [Future] containing a [Response] with a [TagSchema] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<TagSchema>> createTag({ 
-    required String workspaceId,
-    String? projectSlug,
     CreateTagRequest? createTagRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -74,11 +62,6 @@ class TagsApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      r'workspaceId': workspaceId,
-      if (projectSlug != null) r'projectSlug': projectSlug,
-    };
-
     dynamic _bodyData;
 
     try {
@@ -88,7 +71,6 @@ _bodyData=jsonEncode(createTagRequest);
          requestOptions: _options.compose(
           _dio.options,
           _path,
-          queryParameters: _queryParameters,
         ),
         type: DioExceptionType.unknown,
         error: error,
@@ -100,7 +82,6 @@ _bodyData=jsonEncode(createTagRequest);
       _path,
       data: _bodyData,
       options: _options,
-      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -133,12 +114,93 @@ _responseData = rawData == null ? null : deserialize<TagSchema, TagSchema>(rawDa
     );
   }
 
+  /// Delete a tag
+  /// Delete a tag from the workspace. All existing links will still work, but they will no longer be associated with this tag.
+  ///
+  /// Parameters:
+  /// * [id] - The ID of the tag to delete.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [DeleteTag200Response] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<DeleteTag200Response>> deleteTag({ 
+    required String id,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/tags/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _options = Options(
+      method: r'DELETE',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'token',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    DeleteTag200Response? _responseData;
+
+    try {
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<DeleteTag200Response, DeleteTag200Response>(rawData, 'DeleteTag200Response', growable: true);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<DeleteTag200Response>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
   /// Retrieve a list of tags
   /// Retrieve a list of tags for the authenticated workspace.
   ///
   /// Parameters:
-  /// * [workspaceId] - The ID of the workspace.
-  /// * [projectSlug] - The slug of the project. This field is deprecated – use `workspaceId` instead.
+  /// * [sortBy] - The field to sort the tags by.
+  /// * [sortOrder] - The order to sort the tags by.
+  /// * [search] - The search term to filter the tags by.
+  /// * [ids] - IDs of tags to filter by.
+  /// * [page] - The page number for pagination.
+  /// * [pageSize] - The number of items per page.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -149,8 +211,12 @@ _responseData = rawData == null ? null : deserialize<TagSchema, TagSchema>(rawDa
   /// Returns a [Future] containing a [Response] with a [List<TagSchema>] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<List<TagSchema>>> getTags({ 
-    required String workspaceId,
-    String? projectSlug,
+    String? sortBy = 'name',
+    String? sortOrder = 'asc',
+    String? search,
+    List<String>? ids,
+    num? page = 1,
+    num? pageSize = 100,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -178,8 +244,12 @@ _responseData = rawData == null ? null : deserialize<TagSchema, TagSchema>(rawDa
     );
 
     final _queryParameters = <String, dynamic>{
-      r'workspaceId': workspaceId,
-      if (projectSlug != null) r'projectSlug': projectSlug,
+      if (sortBy != null) r'sortBy': sortBy,
+      if (sortOrder != null) r'sortOrder': sortOrder,
+      if (search != null) r'search': search,
+      if (ids != null) r'ids': ids,
+      if (page != null) r'page': page,
+      if (pageSize != null) r'pageSize': pageSize,
     };
 
     final _response = await _dio.request<Object>(
@@ -207,6 +277,103 @@ _responseData = rawData == null ? null : deserialize<List<TagSchema>, TagSchema>
     }
 
     return Response<List<TagSchema>>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Update a tag
+  /// Update a tag in the workspace.
+  ///
+  /// Parameters:
+  /// * [id] - The ID of the tag to update.
+  /// * [createTagRequest] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [TagSchema] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<TagSchema>> updateTag({ 
+    required String id,
+    CreateTagRequest? createTagRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/tags/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _options = Options(
+      method: r'PATCH',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'token',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+_bodyData=jsonEncode(createTagRequest);
+    } catch(error, stackTrace) {
+      throw DioException(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    TagSchema? _responseData;
+
+    try {
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<TagSchema, TagSchema>(rawData, 'TagSchema', growable: true);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<TagSchema>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

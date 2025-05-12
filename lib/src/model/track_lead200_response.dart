@@ -3,6 +3,8 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:dub/src/model/track_lead200_response_click.dart';
+import 'package:dub/src/model/track_lead200_response_customer.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'track_lead200_response.g.dart';
@@ -18,124 +20,46 @@ class TrackLead200Response {
   /// Returns a new [TrackLead200Response] instance.
   TrackLead200Response({
 
-    required  this.clickId,
+    required  this.click,
 
-    required  this.eventName,
-
-    required  this.customerId,
-
-    required  this.customerName,
-
-    required  this.customerEmail,
-
-    required  this.customerAvatar,
-
-     this.metadata,
+    required  this.customer,
   });
 
   @JsonKey(
     
-    name: r'clickId',
+    name: r'click',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
-  final String clickId;
+  final TrackLead200ResponseClick click;
 
 
 
   @JsonKey(
     
-    name: r'eventName',
+    name: r'customer',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
-  final String eventName;
+  final TrackLead200ResponseCustomer customer;
 
 
 
-  @JsonKey(
-    
-    name: r'customerId',
-    required: true,
-    includeIfNull: false
-  )
 
 
-  final String customerId;
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is TrackLead200Response &&
+      other.click == click &&
+      other.customer == customer;
 
-
-
-  @JsonKey(
-    
-    name: r'customerName',
-    required: true,
-    includeIfNull: true
-  )
-
-
-  final String? customerName;
-
-
-
-  @JsonKey(
-    
-    name: r'customerEmail',
-    required: true,
-    includeIfNull: true
-  )
-
-
-  final String? customerEmail;
-
-
-
-  @JsonKey(
-    
-    name: r'customerAvatar',
-    required: true,
-    includeIfNull: true
-  )
-
-
-  final String? customerAvatar;
-
-
-
-  @JsonKey(
-    
-    name: r'metadata',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  final Map<String, Object>? metadata;
-
-
-
-  @override
-  bool operator ==(Object other) => identical(this, other) || other is TrackLead200Response &&
-     other.clickId == clickId &&
-     other.eventName == eventName &&
-     other.customerId == customerId &&
-     other.customerName == customerName &&
-     other.customerEmail == customerEmail &&
-     other.customerAvatar == customerAvatar &&
-     other.metadata == metadata;
-
-  @override
-  int get hashCode =>
-    clickId.hashCode +
-    eventName.hashCode +
-    customerId.hashCode +
-    (customerName == null ? 0 : customerName.hashCode) +
-    (customerEmail == null ? 0 : customerEmail.hashCode) +
-    (customerAvatar == null ? 0 : customerAvatar.hashCode) +
-    metadata.hashCode;
+    @override
+    int get hashCode =>
+        click.hashCode +
+        customer.hashCode;
 
   factory TrackLead200Response.fromJson(Map<String, dynamic> json) => _$TrackLead200ResponseFromJson(json);
 

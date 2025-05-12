@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:dub/src/model/domain_schema_registered_domain.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'domain_schema.g.dart';
@@ -28,17 +29,19 @@ class DomainSchema {
 
      this.archived = false,
 
-     this.noindex = false,
-
-     this.placeholder = 'https://dub.co/help/article/what-is-dub',
+    required  this.placeholder,
 
     required  this.expiredUrl,
 
-    required  this.target,
+    required  this.notFoundUrl,
 
-    required  this.type,
+    required  this.logo,
 
-     this.clicks = 0,
+    required  this.createdAt,
+
+    required  this.updatedAt,
+
+    required  this.registeredDomain,
   });
 
       /// The unique identifier of the domain.
@@ -46,7 +49,7 @@ class DomainSchema {
     
     name: r'id',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -59,7 +62,7 @@ class DomainSchema {
     
     name: r'slug',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -72,7 +75,7 @@ class DomainSchema {
     defaultValue: false,
     name: r'verified',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -85,7 +88,7 @@ class DomainSchema {
     defaultValue: false,
     name: r'primary',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -98,7 +101,7 @@ class DomainSchema {
     defaultValue: false,
     name: r'archived',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -106,29 +109,16 @@ class DomainSchema {
 
 
 
-      /// Prevent search engines from indexing the domain.
-  @JsonKey(
-    defaultValue: false,
-    name: r'noindex',
-    required: true,
-    includeIfNull: false
-  )
-
-
-  final bool noindex;
-
-
-
       /// Provide context to your teammates in the link creation modal by showing them an example of a link to be shortened.
   @JsonKey(
-    defaultValue: 'https://dub.co/help/article/what-is-dub',
+    
     name: r'placeholder',
     required: true,
-    includeIfNull: false
+    includeIfNull: true,
   )
 
 
-  final String placeholder;
+  final String? placeholder;
 
 
 
@@ -137,7 +127,7 @@ class DomainSchema {
     
     name: r'expiredUrl',
     required: true,
-    includeIfNull: true
+    includeIfNull: true,
   )
 
 
@@ -145,72 +135,101 @@ class DomainSchema {
 
 
 
-      /// The page your users will get redirected to when they visit your domain.
+      /// The URL to redirect to when a link under this domain doesn't exist.
   @JsonKey(
     
-    name: r'target',
+    name: r'notFoundUrl',
     required: true,
-    includeIfNull: true
+    includeIfNull: true,
   )
 
 
-  final String? target;
+  final String? notFoundUrl;
 
 
 
-      /// The type of redirect to use for this domain.
+      /// The logo of the domain.
   @JsonKey(
     
-    name: r'type',
+    name: r'logo',
     required: true,
-    includeIfNull: false
+    includeIfNull: true,
   )
 
 
-  final DomainSchemaTypeEnum type;
+  final String? logo;
 
 
 
-      /// The number of clicks on the domain.
+      /// The date the domain was created.
   @JsonKey(
-    defaultValue: 0,
-    name: r'clicks',
+    
+    name: r'createdAt',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
-  final num clicks;
+  final String createdAt;
 
 
 
-  @override
-  bool operator ==(Object other) => identical(this, other) || other is DomainSchema &&
-     other.id == id &&
-     other.slug == slug &&
-     other.verified == verified &&
-     other.primary == primary &&
-     other.archived == archived &&
-     other.noindex == noindex &&
-     other.placeholder == placeholder &&
-     other.expiredUrl == expiredUrl &&
-     other.target == target &&
-     other.type == type &&
-     other.clicks == clicks;
+      /// The date the domain was last updated.
+  @JsonKey(
+    
+    name: r'updatedAt',
+    required: true,
+    includeIfNull: false,
+  )
 
-  @override
-  int get hashCode =>
-    id.hashCode +
-    slug.hashCode +
-    verified.hashCode +
-    primary.hashCode +
-    archived.hashCode +
-    noindex.hashCode +
-    placeholder.hashCode +
-    (expiredUrl == null ? 0 : expiredUrl.hashCode) +
-    (target == null ? 0 : target.hashCode) +
-    type.hashCode +
-    clicks.hashCode;
+
+  final String updatedAt;
+
+
+
+  @JsonKey(
+    
+    name: r'registeredDomain',
+    required: true,
+    includeIfNull: true,
+  )
+
+
+  final DomainSchemaRegisteredDomain? registeredDomain;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is DomainSchema &&
+      other.id == id &&
+      other.slug == slug &&
+      other.verified == verified &&
+      other.primary == primary &&
+      other.archived == archived &&
+      other.placeholder == placeholder &&
+      other.expiredUrl == expiredUrl &&
+      other.notFoundUrl == notFoundUrl &&
+      other.logo == logo &&
+      other.createdAt == createdAt &&
+      other.updatedAt == updatedAt &&
+      other.registeredDomain == registeredDomain;
+
+    @override
+    int get hashCode =>
+        id.hashCode +
+        slug.hashCode +
+        verified.hashCode +
+        primary.hashCode +
+        archived.hashCode +
+        (placeholder == null ? 0 : placeholder.hashCode) +
+        (expiredUrl == null ? 0 : expiredUrl.hashCode) +
+        (notFoundUrl == null ? 0 : notFoundUrl.hashCode) +
+        (logo == null ? 0 : logo.hashCode) +
+        createdAt.hashCode +
+        updatedAt.hashCode +
+        (registeredDomain == null ? 0 : registeredDomain.hashCode);
 
   factory DomainSchema.fromJson(Map<String, dynamic> json) => _$DomainSchemaFromJson(json);
 
@@ -222,15 +241,4 @@ class DomainSchema {
   }
 
 }
-
-/// The type of redirect to use for this domain.
-enum DomainSchemaTypeEnum {
-  @JsonValue(r'redirect')
-  redirect,
-  @JsonValue(r'rewrite')
-  rewrite,
-  @JsonValue(r'unknown_default_open_api')
-  unknownDefaultOpenApi,
-}
-
 

@@ -25,21 +25,27 @@ void main() {
       // TODO
     });
 
-    // This is the ID of the link in your database. If set, it can be used to identify the link in the future. Must be prefixed with 'ext_' when passed as a query parameter.
-    // String externalId
-    test('to test the property `externalId`', () async {
-      // TODO
-    });
-
     // The destination URL of the short link.
     // String url
     test('to test the property `url`', () async {
       // TODO
     });
 
-    // [BETA] Whether to track conversions for the short link.
+    // Whether to track conversions for the short link.
     // bool trackConversion (default value: false)
     test('to test the property `trackConversion`', () async {
+      // TODO
+    });
+
+    // The ID of the link in your database. If set, it can be used to identify the link in future API requests (must be prefixed with 'ext_' when passed as a query parameter). This key is unique across your workspace.
+    // String externalId
+    test('to test the property `externalId`', () async {
+      // TODO
+    });
+
+    // The ID of the tenant that created the link inside your system. If set, it can be used to fetch all links for a tenant.
+    // String tenantId
+    test('to test the property `tenantId`', () async {
       // TODO
     });
 
@@ -91,9 +97,21 @@ void main() {
       // TODO
     });
 
+    // The custom link preview video (og:video). Will be used for Custom Social Media Cards if `proxy` is true. Learn more: https://d.to/og
+    // String video
+    test('to test the property `video`', () async {
+      // TODO
+    });
+
     // Whether the short link uses link cloaking.
     // bool rewrite (default value: false)
     test('to test the property `rewrite`', () async {
+      // TODO
+    });
+
+    // Whether to allow search engines to index the short link.
+    // bool doIndex (default value: false)
+    test('to test the property `doIndex`', () async {
       // TODO
     });
 
@@ -129,6 +147,12 @@ void main() {
     // The tags assigned to the short link.
     // List<TagSchema> tags
     test('to test the property `tags`', () async {
+      // TODO
+    });
+
+    // The IDs of the webhooks that the short link is associated with.
+    // List<String> webhookIds
+    test('to test the property `webhookIds`', () async {
       // TODO
     });
 
@@ -204,15 +228,21 @@ void main() {
       // TODO
     });
 
-    // [BETA]: The number of leads the short links has generated.
+    // The number of leads the short links has generated.
     // num leads (default value: 0)
     test('to test the property `leads`', () async {
       // TODO
     });
 
-    // [BETA]: The number of sales the short links has generated.
+    // The number of sales the short links has generated.
     // num sales (default value: 0)
     test('to test the property `sales`', () async {
+      // TODO
+    });
+
+    // The total dollar amount of sales the short links has generated (in cents).
+    // num saleAmount (default value: 0)
+    test('to test the property `saleAmount`', () async {
       // TODO
     });
 
@@ -231,6 +261,12 @@ void main() {
     // The project ID of the short link. This field is deprecated – use `workspaceId` instead.
     // String projectId
     test('to test the property `projectId`', () async {
+      // TODO
+    });
+
+    // The ID of the program the short link is associated with.
+    // String programId
+    test('to test the property `programId`', () async {
       // TODO
     });
 

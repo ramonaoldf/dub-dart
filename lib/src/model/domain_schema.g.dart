@@ -19,12 +19,13 @@ DomainSchema _$DomainSchemaFromJson(Map<String, dynamic> json) =>
             'verified',
             'primary',
             'archived',
-            'noindex',
             'placeholder',
             'expiredUrl',
-            'target',
-            'type',
-            'clicks'
+            'notFoundUrl',
+            'logo',
+            'createdAt',
+            'updatedAt',
+            'registeredDomain'
           ],
         );
         final val = DomainSchema(
@@ -33,14 +34,18 @@ DomainSchema _$DomainSchemaFromJson(Map<String, dynamic> json) =>
           verified: $checkedConvert('verified', (v) => v as bool? ?? false),
           primary: $checkedConvert('primary', (v) => v as bool? ?? false),
           archived: $checkedConvert('archived', (v) => v as bool? ?? false),
-          noindex: $checkedConvert('noindex', (v) => v as bool? ?? false),
-          placeholder: $checkedConvert('placeholder',
-              (v) => v as String? ?? 'https://dub.co/help/article/what-is-dub'),
+          placeholder: $checkedConvert('placeholder', (v) => v as String?),
           expiredUrl: $checkedConvert('expiredUrl', (v) => v as String?),
-          target: $checkedConvert('target', (v) => v as String?),
-          type: $checkedConvert(
-              'type', (v) => $enumDecode(_$DomainSchemaTypeEnumEnumMap, v)),
-          clicks: $checkedConvert('clicks', (v) => v as num? ?? 0),
+          notFoundUrl: $checkedConvert('notFoundUrl', (v) => v as String?),
+          logo: $checkedConvert('logo', (v) => v as String?),
+          createdAt: $checkedConvert('createdAt', (v) => v as String),
+          updatedAt: $checkedConvert('updatedAt', (v) => v as String),
+          registeredDomain: $checkedConvert(
+              'registeredDomain',
+              (v) => v == null
+                  ? null
+                  : DomainSchemaRegisteredDomain.fromJson(
+                      v as Map<String, dynamic>)),
         );
         return val;
       },
@@ -53,16 +58,11 @@ Map<String, dynamic> _$DomainSchemaToJson(DomainSchema instance) =>
       'verified': instance.verified,
       'primary': instance.primary,
       'archived': instance.archived,
-      'noindex': instance.noindex,
       'placeholder': instance.placeholder,
       'expiredUrl': instance.expiredUrl,
-      'target': instance.target,
-      'type': _$DomainSchemaTypeEnumEnumMap[instance.type]!,
-      'clicks': instance.clicks,
+      'notFoundUrl': instance.notFoundUrl,
+      'logo': instance.logo,
+      'createdAt': instance.createdAt,
+      'updatedAt': instance.updatedAt,
+      'registeredDomain': instance.registeredDomain?.toJson(),
     };
-
-const _$DomainSchemaTypeEnumEnumMap = {
-  DomainSchemaTypeEnum.redirect: 'redirect',
-  DomainSchemaTypeEnum.rewrite: 'rewrite',
-  DomainSchemaTypeEnum.unknownDefaultOpenApi: 'unknown_default_open_api',
-};

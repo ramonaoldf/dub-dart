@@ -26,7 +26,8 @@ class WorkspaceSchemaUsersInner {
     
     name: r'role',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
+  unknownEnumValue: WorkspaceSchemaUsersInnerRoleEnum.unknownDefaultOpenApi,
   )
 
 
@@ -34,13 +35,15 @@ class WorkspaceSchemaUsersInner {
 
 
 
-  @override
-  bool operator ==(Object other) => identical(this, other) || other is WorkspaceSchemaUsersInner &&
-     other.role == role;
 
-  @override
-  int get hashCode =>
-    role.hashCode;
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is WorkspaceSchemaUsersInner &&
+      other.role == role;
+
+    @override
+    int get hashCode =>
+        role.hashCode;
 
   factory WorkspaceSchemaUsersInner.fromJson(Map<String, dynamic> json) => _$WorkspaceSchemaUsersInnerFromJson(json);
 
@@ -55,12 +58,22 @@ class WorkspaceSchemaUsersInner {
 
 /// The role of the authenticated user in the workspace.
 enum WorkspaceSchemaUsersInnerRoleEnum {
-  @JsonValue(r'owner')
-  owner,
-  @JsonValue(r'member')
-  member,
-  @JsonValue(r'unknown_default_open_api')
-  unknownDefaultOpenApi,
+    /// The role of the authenticated user in the workspace.
+@JsonValue(r'owner')
+owner(r'owner'),
+    /// The role of the authenticated user in the workspace.
+@JsonValue(r'member')
+member(r'member'),
+    /// The role of the authenticated user in the workspace.
+@JsonValue(r'unknown_default_open_api')
+unknownDefaultOpenApi(r'unknown_default_open_api');
+
+const WorkspaceSchemaUsersInnerRoleEnum(this.value);
+
+final String value;
+
+@override
+String toString() => value;
 }
 
 

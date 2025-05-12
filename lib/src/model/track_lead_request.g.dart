@@ -13,12 +13,13 @@ TrackLeadRequest _$TrackLeadRequestFromJson(Map<String, dynamic> json) =>
       ($checkedConvert) {
         $checkKeys(
           json,
-          requiredKeys: const ['clickId', 'eventName', 'customerId'],
+          requiredKeys: const ['clickId', 'eventName'],
         );
         final val = TrackLeadRequest(
           clickId: $checkedConvert('clickId', (v) => v as String),
           eventName: $checkedConvert('eventName', (v) => v as String),
-          customerId: $checkedConvert('customerId', (v) => v as String),
+          externalId: $checkedConvert('externalId', (v) => v as String? ?? ''),
+          customerId: $checkedConvert('customerId', (v) => v as String?),
           customerName: $checkedConvert('customerName', (v) => v as String?),
           customerEmail: $checkedConvert('customerEmail', (v) => v as String?),
           customerAvatar:
@@ -37,7 +38,6 @@ Map<String, dynamic> _$TrackLeadRequestToJson(TrackLeadRequest instance) {
   final val = <String, dynamic>{
     'clickId': instance.clickId,
     'eventName': instance.eventName,
-    'customerId': instance.customerId,
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -46,6 +46,8 @@ Map<String, dynamic> _$TrackLeadRequestToJson(TrackLeadRequest instance) {
     }
   }
 
+  writeNotNull('externalId', instance.externalId);
+  writeNotNull('customerId', instance.customerId);
   writeNotNull('customerName', instance.customerName);
   writeNotNull('customerEmail', instance.customerEmail);
   writeNotNull('customerAvatar', instance.customerAvatar);

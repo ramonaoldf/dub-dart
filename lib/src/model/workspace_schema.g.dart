@@ -18,21 +18,30 @@ WorkspaceSchema _$WorkspaceSchemaFromJson(Map<String, dynamic> json) =>
             'name',
             'slug',
             'logo',
+            'inviteCode',
+            'plan',
+            'stripeId',
+            'billingCycleStart',
+            'paymentFailedAt',
+            'stripeConnectId',
             'usage',
             'usageLimit',
             'linksUsage',
             'linksLimit',
+            'salesUsage',
+            'salesLimit',
             'domainsLimit',
             'tagsLimit',
             'usersLimit',
-            'plan',
-            'stripeId',
-            'billingCycleStart',
-            'stripeConnectId',
+            'aiUsage',
+            'aiLimit',
+            'conversionEnabled',
+            'dotLinkClaimed',
+            'partnersEnabled',
             'createdAt',
             'users',
             'domains',
-            'inviteCode'
+            'store'
           ],
         );
         final val = WorkspaceSchema(
@@ -40,20 +49,33 @@ WorkspaceSchema _$WorkspaceSchemaFromJson(Map<String, dynamic> json) =>
           name: $checkedConvert('name', (v) => v as String),
           slug: $checkedConvert('slug', (v) => v as String),
           logo: $checkedConvert('logo', (v) => v as String?),
+          inviteCode: $checkedConvert('inviteCode', (v) => v as String?),
+          plan: $checkedConvert(
+              'plan',
+              (v) => $enumDecode(_$WorkspaceSchemaPlanEnumEnumMap, v,
+                  unknownValue: WorkspaceSchemaPlanEnum.unknownDefaultOpenApi)),
+          stripeId: $checkedConvert('stripeId', (v) => v as String?),
+          billingCycleStart:
+              $checkedConvert('billingCycleStart', (v) => v as num),
+          paymentFailedAt:
+              $checkedConvert('paymentFailedAt', (v) => v as String?),
+          stripeConnectId:
+              $checkedConvert('stripeConnectId', (v) => v as String?),
           usage: $checkedConvert('usage', (v) => v as num),
           usageLimit: $checkedConvert('usageLimit', (v) => v as num),
           linksUsage: $checkedConvert('linksUsage', (v) => v as num),
           linksLimit: $checkedConvert('linksLimit', (v) => v as num),
+          salesUsage: $checkedConvert('salesUsage', (v) => v as num),
+          salesLimit: $checkedConvert('salesLimit', (v) => v as num),
           domainsLimit: $checkedConvert('domainsLimit', (v) => v as num),
           tagsLimit: $checkedConvert('tagsLimit', (v) => v as num),
           usersLimit: $checkedConvert('usersLimit', (v) => v as num),
-          plan: $checkedConvert(
-              'plan', (v) => $enumDecode(_$WorkspaceSchemaPlanEnumEnumMap, v)),
-          stripeId: $checkedConvert('stripeId', (v) => v as String?),
-          billingCycleStart:
-              $checkedConvert('billingCycleStart', (v) => v as num),
-          stripeConnectId:
-              $checkedConvert('stripeConnectId', (v) => v as String?),
+          aiUsage: $checkedConvert('aiUsage', (v) => v as num),
+          aiLimit: $checkedConvert('aiLimit', (v) => v as num),
+          conversionEnabled:
+              $checkedConvert('conversionEnabled', (v) => v as bool),
+          dotLinkClaimed: $checkedConvert('dotLinkClaimed', (v) => v as bool),
+          partnersEnabled: $checkedConvert('partnersEnabled', (v) => v as bool),
           createdAt: $checkedConvert('createdAt', (v) => v as String),
           users: $checkedConvert(
               'users',
@@ -67,8 +89,16 @@ WorkspaceSchema _$WorkspaceSchemaFromJson(Map<String, dynamic> json) =>
                   .map((e) => WorkspaceSchemaDomainsInner.fromJson(
                       e as Map<String, dynamic>))
                   .toList()),
-          inviteCode: $checkedConvert('inviteCode', (v) => v as String?),
-          betaTester: $checkedConvert('betaTester', (v) => v as bool?),
+          flags: $checkedConvert(
+              'flags',
+              (v) => (v as Map<String, dynamic>?)?.map(
+                    (k, e) => MapEntry(k, e as bool),
+                  )),
+          store: $checkedConvert(
+              'store',
+              (v) => (v as Map<String, dynamic>?)?.map(
+                    (k, e) => MapEntry(k, e as Object),
+                  )),
         );
         return val;
       },
@@ -80,21 +110,29 @@ Map<String, dynamic> _$WorkspaceSchemaToJson(WorkspaceSchema instance) {
     'name': instance.name,
     'slug': instance.slug,
     'logo': instance.logo,
+    'inviteCode': instance.inviteCode,
+    'plan': _$WorkspaceSchemaPlanEnumEnumMap[instance.plan]!,
+    'stripeId': instance.stripeId,
+    'billingCycleStart': instance.billingCycleStart,
+    'paymentFailedAt': instance.paymentFailedAt,
+    'stripeConnectId': instance.stripeConnectId,
     'usage': instance.usage,
     'usageLimit': instance.usageLimit,
     'linksUsage': instance.linksUsage,
     'linksLimit': instance.linksLimit,
+    'salesUsage': instance.salesUsage,
+    'salesLimit': instance.salesLimit,
     'domainsLimit': instance.domainsLimit,
     'tagsLimit': instance.tagsLimit,
     'usersLimit': instance.usersLimit,
-    'plan': _$WorkspaceSchemaPlanEnumEnumMap[instance.plan]!,
-    'stripeId': instance.stripeId,
-    'billingCycleStart': instance.billingCycleStart,
-    'stripeConnectId': instance.stripeConnectId,
+    'aiUsage': instance.aiUsage,
+    'aiLimit': instance.aiLimit,
+    'conversionEnabled': instance.conversionEnabled,
+    'dotLinkClaimed': instance.dotLinkClaimed,
+    'partnersEnabled': instance.partnersEnabled,
     'createdAt': instance.createdAt,
     'users': instance.users.map((e) => e.toJson()).toList(),
     'domains': instance.domains.map((e) => e.toJson()).toList(),
-    'inviteCode': instance.inviteCode,
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -103,7 +141,8 @@ Map<String, dynamic> _$WorkspaceSchemaToJson(WorkspaceSchema instance) {
     }
   }
 
-  writeNotNull('betaTester', instance.betaTester);
+  writeNotNull('flags', instance.flags);
+  val['store'] = instance.store;
   return val;
 }
 

@@ -30,7 +30,8 @@ class GetLinks500ResponseError {
     
     name: r'code',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
+  unknownEnumValue: GetLinks500ResponseErrorCodeEnum.unknownDefaultOpenApi,
   )
 
 
@@ -43,7 +44,7 @@ class GetLinks500ResponseError {
     
     name: r'message',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -56,7 +57,7 @@ class GetLinks500ResponseError {
     
     name: r'doc_url',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -64,17 +65,19 @@ class GetLinks500ResponseError {
 
 
 
-  @override
-  bool operator ==(Object other) => identical(this, other) || other is GetLinks500ResponseError &&
-     other.code == code &&
-     other.message == message &&
-     other.docUrl == docUrl;
 
-  @override
-  int get hashCode =>
-    code.hashCode +
-    message.hashCode +
-    docUrl.hashCode;
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is GetLinks500ResponseError &&
+      other.code == code &&
+      other.message == message &&
+      other.docUrl == docUrl;
+
+    @override
+    int get hashCode =>
+        code.hashCode +
+        message.hashCode +
+        docUrl.hashCode;
 
   factory GetLinks500ResponseError.fromJson(Map<String, dynamic> json) => _$GetLinks500ResponseErrorFromJson(json);
 
@@ -89,10 +92,19 @@ class GetLinks500ResponseError {
 
 /// A short code indicating the error code returned.
 enum GetLinks500ResponseErrorCodeEnum {
-  @JsonValue(r'internal_server_error')
-  internalServerError,
-  @JsonValue(r'unknown_default_open_api')
-  unknownDefaultOpenApi,
+    /// A short code indicating the error code returned.
+@JsonValue(r'internal_server_error')
+internalServerError(r'internal_server_error'),
+    /// A short code indicating the error code returned.
+@JsonValue(r'unknown_default_open_api')
+unknownDefaultOpenApi(r'unknown_default_open_api');
+
+const GetLinks500ResponseErrorCodeEnum(this.value);
+
+final String value;
+
+@override
+String toString() => value;
 }
 
 

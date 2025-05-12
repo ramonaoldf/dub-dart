@@ -30,7 +30,8 @@ class GetLinks429ResponseError {
     
     name: r'code',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
+  unknownEnumValue: GetLinks429ResponseErrorCodeEnum.unknownDefaultOpenApi,
   )
 
 
@@ -43,7 +44,7 @@ class GetLinks429ResponseError {
     
     name: r'message',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -56,7 +57,7 @@ class GetLinks429ResponseError {
     
     name: r'doc_url',
     required: false,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -64,17 +65,19 @@ class GetLinks429ResponseError {
 
 
 
-  @override
-  bool operator ==(Object other) => identical(this, other) || other is GetLinks429ResponseError &&
-     other.code == code &&
-     other.message == message &&
-     other.docUrl == docUrl;
 
-  @override
-  int get hashCode =>
-    code.hashCode +
-    message.hashCode +
-    docUrl.hashCode;
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is GetLinks429ResponseError &&
+      other.code == code &&
+      other.message == message &&
+      other.docUrl == docUrl;
+
+    @override
+    int get hashCode =>
+        code.hashCode +
+        message.hashCode +
+        docUrl.hashCode;
 
   factory GetLinks429ResponseError.fromJson(Map<String, dynamic> json) => _$GetLinks429ResponseErrorFromJson(json);
 
@@ -89,10 +92,19 @@ class GetLinks429ResponseError {
 
 /// A short code indicating the error code returned.
 enum GetLinks429ResponseErrorCodeEnum {
-  @JsonValue(r'rate_limit_exceeded')
-  rateLimitExceeded,
-  @JsonValue(r'unknown_default_open_api')
-  unknownDefaultOpenApi,
+    /// A short code indicating the error code returned.
+@JsonValue(r'rate_limit_exceeded')
+rateLimitExceeded(r'rate_limit_exceeded'),
+    /// A short code indicating the error code returned.
+@JsonValue(r'unknown_default_open_api')
+unknownDefaultOpenApi(r'unknown_default_open_api');
+
+const GetLinks429ResponseErrorCodeEnum(this.value);
+
+final String value;
+
+@override
+String toString() => value;
 }
 
 

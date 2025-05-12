@@ -9,15 +9,6 @@ import 'dart:convert';
 import 'package:dub/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:dub/src/model/get_links400_response.dart';
-import 'package:dub/src/model/get_links401_response.dart';
-import 'package:dub/src/model/get_links403_response.dart';
-import 'package:dub/src/model/get_links404_response.dart';
-import 'package:dub/src/model/get_links409_response.dart';
-import 'package:dub/src/model/get_links410_response.dart';
-import 'package:dub/src/model/get_links422_response.dart';
-import 'package:dub/src/model/get_links429_response.dart';
-import 'package:dub/src/model/get_links500_response.dart';
 
 class QRCodesApi {
 
@@ -30,11 +21,14 @@ class QRCodesApi {
   ///
   /// Parameters:
   /// * [url] - The URL to generate a QR code for.
+  /// * [logo] - The logo to include in the QR code. Can only be used with a paid plan on Dub.co.
   /// * [size] - The size of the QR code in pixels. Defaults to `600` if not provided.
   /// * [level] - The level of error correction to use for the QR code. Defaults to `L` if not provided.
   /// * [fgColor] - The foreground color of the QR code in hex format. Defaults to `#000000` if not provided.
   /// * [bgColor] - The background color of the QR code in hex format. Defaults to `#ffffff` if not provided.
-  /// * [includeMargin] - Whether to include a margin around the QR code. Defaults to `false` if not provided.
+  /// * [hideLogo] - Whether to hide the logo in the QR code. Can only be used with a paid plan on Dub.co.
+  /// * [margin] - The size of the margin around the QR code. Defaults to 2 if not provided.
+  /// * [includeMargin] - DEPRECATED: Margin is included by default. Use the `margin` prop to customize the margin size.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -46,11 +40,14 @@ class QRCodesApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<String>> getQRCode({ 
     required String url,
+    String? logo,
     num? size = 600,
     String? level = 'L',
     String? fgColor = '#000000',
     String? bgColor = '#FFFFFF',
-    bool? includeMargin = false,
+    bool? hideLogo = false,
+    num? margin = 2,
+    bool? includeMargin = true,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -73,10 +70,13 @@ class QRCodesApi {
 
     final _queryParameters = <String, dynamic>{
       r'url': url,
+      if (logo != null) r'logo': logo,
       if (size != null) r'size': size,
       if (level != null) r'level': level,
       if (fgColor != null) r'fgColor': fgColor,
       if (bgColor != null) r'bgColor': bgColor,
+      if (hideLogo != null) r'hideLogo': hideLogo,
+      if (margin != null) r'margin': margin,
       if (includeMargin != null) r'includeMargin': includeMargin,
     };
 

@@ -9,19 +9,9 @@ import 'dart:convert';
 import 'package:dub/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:dub/src/model/add_domain_request.dart';
+import 'package:dub/src/model/create_domain_request.dart';
 import 'package:dub/src/model/delete_domain200_response.dart';
 import 'package:dub/src/model/domain_schema.dart';
-import 'package:dub/src/model/get_links400_response.dart';
-import 'package:dub/src/model/get_links401_response.dart';
-import 'package:dub/src/model/get_links403_response.dart';
-import 'package:dub/src/model/get_links404_response.dart';
-import 'package:dub/src/model/get_links409_response.dart';
-import 'package:dub/src/model/get_links410_response.dart';
-import 'package:dub/src/model/get_links422_response.dart';
-import 'package:dub/src/model/get_links429_response.dart';
-import 'package:dub/src/model/get_links500_response.dart';
-import 'package:dub/src/model/transfer_domain_request.dart';
 import 'package:dub/src/model/update_domain_request.dart';
 
 class DomainsApi {
@@ -30,13 +20,11 @@ class DomainsApi {
 
   const DomainsApi(this._dio);
 
-  /// Add a domain
-  /// Add a domain to the authenticated workspace.
+  /// Create a domain
+  /// Create a domain for the authenticated workspace.
   ///
   /// Parameters:
-  /// * [workspaceId] - The ID of the workspace.
-  /// * [projectSlug] - The slug of the project. This field is deprecated – use `workspaceId` instead.
-  /// * [addDomainRequest] 
+  /// * [createDomainRequest] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -46,10 +34,8 @@ class DomainsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [DomainSchema] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DomainSchema>> addDomain({ 
-    required String workspaceId,
-    String? projectSlug,
-    AddDomainRequest? addDomainRequest,
+  Future<Response<DomainSchema>> createDomain({ 
+    CreateDomainRequest? createDomainRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -77,21 +63,15 @@ class DomainsApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      r'workspaceId': workspaceId,
-      if (projectSlug != null) r'projectSlug': projectSlug,
-    };
-
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(addDomainRequest);
+_bodyData=jsonEncode(createDomainRequest);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
           _dio.options,
           _path,
-          queryParameters: _queryParameters,
         ),
         type: DioExceptionType.unknown,
         error: error,
@@ -103,7 +83,6 @@ _bodyData=jsonEncode(addDomainRequest);
       _path,
       data: _bodyData,
       options: _options,
-      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -141,8 +120,6 @@ _responseData = rawData == null ? null : deserialize<DomainSchema, DomainSchema>
   ///
   /// Parameters:
   /// * [slug] - The domain name.
-  /// * [workspaceId] - The ID of the workspace.
-  /// * [projectSlug] - The slug of the project. This field is deprecated – use `workspaceId` instead.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -154,8 +131,6 @@ _responseData = rawData == null ? null : deserialize<DomainSchema, DomainSchema>
   /// Throws [DioException] if API call or serialization fails
   Future<Response<DeleteDomain200Response>> deleteDomain({ 
     required String slug,
-    required String workspaceId,
-    String? projectSlug,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -182,15 +157,9 @@ _responseData = rawData == null ? null : deserialize<DomainSchema, DomainSchema>
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      r'workspaceId': workspaceId,
-      if (projectSlug != null) r'projectSlug': projectSlug,
-    };
-
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
-      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -227,8 +196,10 @@ _responseData = rawData == null ? null : deserialize<DeleteDomain200Response, De
   /// Retrieve a list of domains associated with the authenticated workspace.
   ///
   /// Parameters:
-  /// * [workspaceId] - The ID of the workspace.
-  /// * [projectSlug] - The slug of the project. This field is deprecated – use `workspaceId` instead.
+  /// * [archived] - Whether to include archived domains in the response. Defaults to `false` if not provided.
+  /// * [search] - The search term to filter the domains by.
+  /// * [page] - The page number for pagination.
+  /// * [pageSize] - The number of items per page.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -239,8 +210,10 @@ _responseData = rawData == null ? null : deserialize<DeleteDomain200Response, De
   /// Returns a [Future] containing a [Response] with a [List<DomainSchema>] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<List<DomainSchema>>> listDomains({ 
-    required String workspaceId,
-    String? projectSlug,
+    bool? archived = false,
+    String? search,
+    num? page = 1,
+    num? pageSize = 50,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -268,8 +241,10 @@ _responseData = rawData == null ? null : deserialize<DeleteDomain200Response, De
     );
 
     final _queryParameters = <String, dynamic>{
-      r'workspaceId': workspaceId,
-      if (projectSlug != null) r'projectSlug': projectSlug,
+      if (archived != null) r'archived': archived,
+      if (search != null) r'search': search,
+      if (page != null) r'page': page,
+      if (pageSize != null) r'pageSize': pageSize,
     };
 
     final _response = await _dio.request<Object>(
@@ -308,208 +283,11 @@ _responseData = rawData == null ? null : deserialize<List<DomainSchema>, DomainS
     );
   }
 
-  /// Set a domain as primary
-  /// Set a domain as primary for the authenticated workspace.
-  ///
-  /// Parameters:
-  /// * [slug] - The domain name.
-  /// * [workspaceId] - The ID of the workspace.
-  /// * [projectSlug] - The slug of the project. This field is deprecated – use `workspaceId` instead.
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [DomainSchema] as data
-  /// Throws [DioException] if API call or serialization fails
-  Future<Response<DomainSchema>> setPrimaryDomain({ 
-    required String slug,
-    required String workspaceId,
-    String? projectSlug,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/domains/{slug}/primary'.replaceAll('{' r'slug' '}', slug.toString());
-    final _options = Options(
-      method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'token',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _queryParameters = <String, dynamic>{
-      r'workspaceId': workspaceId,
-      if (projectSlug != null) r'projectSlug': projectSlug,
-    };
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      queryParameters: _queryParameters,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    DomainSchema? _responseData;
-
-    try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<DomainSchema, DomainSchema>(rawData, 'DomainSchema', growable: true);
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<DomainSchema>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
-  /// Transfer a domain
-  /// Transfer a domain to another workspace within the authenticated account.
-  ///
-  /// Parameters:
-  /// * [slug] - The domain name.
-  /// * [workspaceId] - The ID of the workspace.
-  /// * [projectSlug] - The slug of the project. This field is deprecated – use `workspaceId` instead.
-  /// * [transferDomainRequest] 
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [DomainSchema] as data
-  /// Throws [DioException] if API call or serialization fails
-  Future<Response<DomainSchema>> transferDomain({ 
-    required String slug,
-    required String workspaceId,
-    String? projectSlug,
-    TransferDomainRequest? transferDomainRequest,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/domains/{slug}/transfer'.replaceAll('{' r'slug' '}', slug.toString());
-    final _options = Options(
-      method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'http',
-            'scheme': 'bearer',
-            'name': 'token',
-          },
-        ],
-        ...?extra,
-      },
-      contentType: 'application/json',
-      validateStatus: validateStatus,
-    );
-
-    final _queryParameters = <String, dynamic>{
-      r'workspaceId': workspaceId,
-      if (projectSlug != null) r'projectSlug': projectSlug,
-    };
-
-    dynamic _bodyData;
-
-    try {
-_bodyData=jsonEncode(transferDomainRequest);
-    } catch(error, stackTrace) {
-      throw DioException(
-         requestOptions: _options.compose(
-          _dio.options,
-          _path,
-          queryParameters: _queryParameters,
-        ),
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    final _response = await _dio.request<Object>(
-      _path,
-      data: _bodyData,
-      options: _options,
-      queryParameters: _queryParameters,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    DomainSchema? _responseData;
-
-    try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<DomainSchema, DomainSchema>(rawData, 'DomainSchema', growable: true);
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<DomainSchema>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
   /// Update a domain
   /// Update a domain for the authenticated workspace.
   ///
   /// Parameters:
   /// * [slug] - The domain name.
-  /// * [workspaceId] - The ID of the workspace.
-  /// * [projectSlug] - The slug of the project. This field is deprecated – use `workspaceId` instead.
   /// * [updateDomainRequest] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -522,8 +300,6 @@ _responseData = rawData == null ? null : deserialize<DomainSchema, DomainSchema>
   /// Throws [DioException] if API call or serialization fails
   Future<Response<DomainSchema>> updateDomain({ 
     required String slug,
-    required String workspaceId,
-    String? projectSlug,
     UpdateDomainRequest? updateDomainRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -552,11 +328,6 @@ _responseData = rawData == null ? null : deserialize<DomainSchema, DomainSchema>
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      r'workspaceId': workspaceId,
-      if (projectSlug != null) r'projectSlug': projectSlug,
-    };
-
     dynamic _bodyData;
 
     try {
@@ -566,7 +337,6 @@ _bodyData=jsonEncode(updateDomainRequest);
          requestOptions: _options.compose(
           _dio.options,
           _path,
-          queryParameters: _queryParameters,
         ),
         type: DioExceptionType.unknown,
         error: error,
@@ -578,7 +348,6 @@ _bodyData=jsonEncode(updateDomainRequest);
       _path,
       data: _bodyData,
       options: _options,
-      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,

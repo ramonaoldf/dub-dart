@@ -18,7 +18,9 @@ TagSchema _$TagSchemaFromJson(Map<String, dynamic> json) => $checkedCreate(
           id: $checkedConvert('id', (v) => v as String),
           name: $checkedConvert('name', (v) => v as String),
           color: $checkedConvert(
-              'color', (v) => $enumDecode(_$TagSchemaColorEnumEnumMap, v)),
+              'color',
+              (v) => $enumDecode(_$TagSchemaColorEnumEnumMap, v,
+                  unknownValue: TagSchemaColorEnum.unknownDefaultOpenApi)),
         );
         return val;
       },

@@ -30,7 +30,7 @@ class TagSchema {
     
     name: r'id',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -43,7 +43,7 @@ class TagSchema {
     
     name: r'name',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -56,7 +56,8 @@ class TagSchema {
     
     name: r'color',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
+  unknownEnumValue: TagSchemaColorEnum.unknownDefaultOpenApi,
   )
 
 
@@ -64,17 +65,19 @@ class TagSchema {
 
 
 
-  @override
-  bool operator ==(Object other) => identical(this, other) || other is TagSchema &&
-     other.id == id &&
-     other.name == name &&
-     other.color == color;
 
-  @override
-  int get hashCode =>
-    id.hashCode +
-    name.hashCode +
-    color.hashCode;
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is TagSchema &&
+      other.id == id &&
+      other.name == name &&
+      other.color == color;
+
+    @override
+    int get hashCode =>
+        id.hashCode +
+        name.hashCode +
+        color.hashCode;
 
   factory TagSchema.fromJson(Map<String, dynamic> json) => _$TagSchemaFromJson(json);
 
@@ -89,22 +92,37 @@ class TagSchema {
 
 /// The color of the tag.
 enum TagSchemaColorEnum {
-  @JsonValue(r'red')
-  red,
-  @JsonValue(r'yellow')
-  yellow,
-  @JsonValue(r'green')
-  green,
-  @JsonValue(r'blue')
-  blue,
-  @JsonValue(r'purple')
-  purple,
-  @JsonValue(r'pink')
-  pink,
-  @JsonValue(r'brown')
-  brown,
-  @JsonValue(r'unknown_default_open_api')
-  unknownDefaultOpenApi,
+    /// The color of the tag.
+@JsonValue(r'red')
+red(r'red'),
+    /// The color of the tag.
+@JsonValue(r'yellow')
+yellow(r'yellow'),
+    /// The color of the tag.
+@JsonValue(r'green')
+green(r'green'),
+    /// The color of the tag.
+@JsonValue(r'blue')
+blue(r'blue'),
+    /// The color of the tag.
+@JsonValue(r'purple')
+purple(r'purple'),
+    /// The color of the tag.
+@JsonValue(r'pink')
+pink(r'pink'),
+    /// The color of the tag.
+@JsonValue(r'brown')
+brown(r'brown'),
+    /// The color of the tag.
+@JsonValue(r'unknown_default_open_api')
+unknownDefaultOpenApi(r'unknown_default_open_api');
+
+const TagSchemaColorEnum(this.value);
+
+final String value;
+
+@override
+String toString() => value;
 }
 
 

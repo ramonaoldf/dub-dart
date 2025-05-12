@@ -46,7 +46,6 @@ class _CreateLinkCArdState extends State<CreateLinkCArd> {
         isLoading = true;
       });
       final response = await widget.session.api.getLinksApi().createLink(
-            workspaceId: widget.session.workspaceId!,
             createLinkRequest: CreateLinkRequest(
               url: urlController.text,
               domain: 'dub.sh',

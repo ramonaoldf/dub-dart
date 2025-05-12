@@ -30,7 +30,7 @@ class GetMetatags200Response {
     
     name: r'title',
     required: true,
-    includeIfNull: true
+    includeIfNull: true,
   )
 
 
@@ -43,7 +43,7 @@ class GetMetatags200Response {
     
     name: r'description',
     required: true,
-    includeIfNull: true
+    includeIfNull: true,
   )
 
 
@@ -56,7 +56,7 @@ class GetMetatags200Response {
     
     name: r'image',
     required: true,
-    includeIfNull: true
+    includeIfNull: true,
   )
 
 
@@ -64,17 +64,19 @@ class GetMetatags200Response {
 
 
 
-  @override
-  bool operator ==(Object other) => identical(this, other) || other is GetMetatags200Response &&
-     other.title == title &&
-     other.description == description &&
-     other.image == image;
 
-  @override
-  int get hashCode =>
-    (title == null ? 0 : title.hashCode) +
-    (description == null ? 0 : description.hashCode) +
-    (image == null ? 0 : image.hashCode);
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is GetMetatags200Response &&
+      other.title == title &&
+      other.description == description &&
+      other.image == image;
+
+    @override
+    int get hashCode =>
+        (title == null ? 0 : title.hashCode) +
+        (description == null ? 0 : description.hashCode) +
+        (image == null ? 0 : image.hashCode);
 
   factory GetMetatags200Response.fromJson(Map<String, dynamic> json) => _$GetMetatags200ResponseFromJson(json);
 

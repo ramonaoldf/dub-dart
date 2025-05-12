@@ -17,8 +17,11 @@ GetLinks422ResponseError _$GetLinks422ResponseErrorFromJson(
           requiredKeys: const ['code', 'message'],
         );
         final val = GetLinks422ResponseError(
-          code: $checkedConvert('code',
-              (v) => $enumDecode(_$GetLinks422ResponseErrorCodeEnumEnumMap, v)),
+          code: $checkedConvert(
+              'code',
+              (v) => $enumDecode(_$GetLinks422ResponseErrorCodeEnumEnumMap, v,
+                  unknownValue:
+                      GetLinks422ResponseErrorCodeEnum.unknownDefaultOpenApi)),
           message: $checkedConvert('message', (v) => v as String),
           docUrl: $checkedConvert('doc_url', (v) => v as String?),
         );

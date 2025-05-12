@@ -17,8 +17,11 @@ GetLinks401ResponseError _$GetLinks401ResponseErrorFromJson(
           requiredKeys: const ['code', 'message'],
         );
         final val = GetLinks401ResponseError(
-          code: $checkedConvert('code',
-              (v) => $enumDecode(_$GetLinks401ResponseErrorCodeEnumEnumMap, v)),
+          code: $checkedConvert(
+              'code',
+              (v) => $enumDecode(_$GetLinks401ResponseErrorCodeEnumEnumMap, v,
+                  unknownValue:
+                      GetLinks401ResponseErrorCodeEnum.unknownDefaultOpenApi)),
           message: $checkedConvert('message', (v) => v as String),
           docUrl: $checkedConvert('doc_url', (v) => v as String?),
         );

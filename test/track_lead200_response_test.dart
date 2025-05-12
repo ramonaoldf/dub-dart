@@ -7,38 +7,13 @@ void main() {
   // TODO add properties to the entity
 
   group(TrackLead200Response, () {
-    // String clickId
-    test('to test the property `clickId`', () async {
+    // TrackLead200ResponseClick click
+    test('to test the property `click`', () async {
       // TODO
     });
 
-    // String eventName
-    test('to test the property `eventName`', () async {
-      // TODO
-    });
-
-    // String customerId
-    test('to test the property `customerId`', () async {
-      // TODO
-    });
-
-    // String customerName
-    test('to test the property `customerName`', () async {
-      // TODO
-    });
-
-    // String customerEmail
-    test('to test the property `customerEmail`', () async {
-      // TODO
-    });
-
-    // String customerAvatar
-    test('to test the property `customerAvatar`', () async {
-      // TODO
-    });
-
-    // Map<String, Object> metadata
-    test('to test the property `metadata`', () async {
+    // TrackLead200ResponseCustomer customer
+    test('to test the property `customer`', () async {
       // TODO
     });
 

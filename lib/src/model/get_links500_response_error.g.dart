@@ -17,8 +17,11 @@ GetLinks500ResponseError _$GetLinks500ResponseErrorFromJson(
           requiredKeys: const ['code', 'message'],
         );
         final val = GetLinks500ResponseError(
-          code: $checkedConvert('code',
-              (v) => $enumDecode(_$GetLinks500ResponseErrorCodeEnumEnumMap, v)),
+          code: $checkedConvert(
+              'code',
+              (v) => $enumDecode(_$GetLinks500ResponseErrorCodeEnumEnumMap, v,
+                  unknownValue:
+                      GetLinks500ResponseErrorCodeEnum.unknownDefaultOpenApi)),
           message: $checkedConvert('message', (v) => v as String),
           docUrl: $checkedConvert('doc_url', (v) => v as String?),
         );

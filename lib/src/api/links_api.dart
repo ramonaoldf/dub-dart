@@ -9,21 +9,13 @@ import 'dart:convert';
 import 'package:dub/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
+import 'package:dub/src/model/bulk_create_links200_response_inner.dart';
+import 'package:dub/src/model/bulk_delete_links200_response.dart';
+import 'package:dub/src/model/bulk_update_links_request.dart';
 import 'package:dub/src/model/create_link_request.dart';
 import 'package:dub/src/model/delete_link200_response.dart';
-import 'package:dub/src/model/get_links400_response.dart';
-import 'package:dub/src/model/get_links401_response.dart';
-import 'package:dub/src/model/get_links403_response.dart';
-import 'package:dub/src/model/get_links404_response.dart';
-import 'package:dub/src/model/get_links409_response.dart';
-import 'package:dub/src/model/get_links410_response.dart';
-import 'package:dub/src/model/get_links422_response.dart';
-import 'package:dub/src/model/get_links429_response.dart';
-import 'package:dub/src/model/get_links500_response.dart';
-import 'package:dub/src/model/get_links_count_group_by_parameter.dart';
-import 'package:dub/src/model/get_links_tag_ids_parameter.dart';
-import 'package:dub/src/model/get_links_tag_names_parameter.dart';
 import 'package:dub/src/model/link_schema.dart';
+import 'package:dub/src/model/update_link_request.dart';
 
 class LinksApi {
 
@@ -35,8 +27,6 @@ class LinksApi {
   /// Bulk create up to 100 links for the authenticated workspace.
   ///
   /// Parameters:
-  /// * [workspaceId] - The ID of the workspace.
-  /// * [projectSlug] - The slug of the project. This field is deprecated – use `workspaceId` instead.
   /// * [createLinkRequest] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -45,11 +35,9 @@ class LinksApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [List<LinkSchema>] as data
+  /// Returns a [Future] containing a [Response] with a [List<BulkCreateLinks200ResponseInner>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<List<LinkSchema>>> bulkCreateLinks({ 
-    required String workspaceId,
-    String? projectSlug,
+  Future<Response<List<BulkCreateLinks200ResponseInner>>> bulkCreateLinks({ 
     List<CreateLinkRequest>? createLinkRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -78,11 +66,6 @@ class LinksApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      r'workspaceId': workspaceId,
-      if (projectSlug != null) r'projectSlug': projectSlug,
-    };
-
     dynamic _bodyData;
 
     try {
@@ -92,7 +75,6 @@ _bodyData=jsonEncode(createLinkRequest);
          requestOptions: _options.compose(
           _dio.options,
           _path,
-          queryParameters: _queryParameters,
         ),
         type: DioExceptionType.unknown,
         error: error,
@@ -104,7 +86,183 @@ _bodyData=jsonEncode(createLinkRequest);
       _path,
       data: _bodyData,
       options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    List<BulkCreateLinks200ResponseInner>? _responseData;
+
+    try {
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<List<BulkCreateLinks200ResponseInner>, BulkCreateLinks200ResponseInner>(rawData, 'List<BulkCreateLinks200ResponseInner>', growable: true);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<List<BulkCreateLinks200ResponseInner>>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Bulk delete links
+  /// Bulk delete up to 100 links for the authenticated workspace.
+  ///
+  /// Parameters:
+  /// * [linkIds] - Comma-separated list of link IDs to delete. Maximum of 100 IDs. Non-existing IDs will be ignored.
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [BulkDeleteLinks200Response] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<BulkDeleteLinks200Response>> bulkDeleteLinks({ 
+    required List<String> linkIds,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/links/bulk';
+    final _options = Options(
+      method: r'DELETE',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'token',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      r'linkIds': linkIds,
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
       queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    BulkDeleteLinks200Response? _responseData;
+
+    try {
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<BulkDeleteLinks200Response, BulkDeleteLinks200Response>(rawData, 'BulkDeleteLinks200Response', growable: true);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<BulkDeleteLinks200Response>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Bulk update links
+  /// Bulk update up to 100 links with the same data for the authenticated workspace.
+  ///
+  /// Parameters:
+  /// * [bulkUpdateLinksRequest] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [List<LinkSchema>] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<List<LinkSchema>>> bulkUpdateLinks({ 
+    BulkUpdateLinksRequest? bulkUpdateLinksRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/links/bulk';
+    final _options = Options(
+      method: r'PATCH',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'http',
+            'scheme': 'bearer',
+            'name': 'token',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+_bodyData=jsonEncode(bulkUpdateLinksRequest);
+    } catch(error, stackTrace) {
+      throw DioException(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -141,8 +299,6 @@ _responseData = rawData == null ? null : deserialize<List<LinkSchema>, LinkSchem
   /// Create a new link for the authenticated workspace.
   ///
   /// Parameters:
-  /// * [workspaceId] - The ID of the workspace.
-  /// * [projectSlug] - The slug of the project. This field is deprecated – use `workspaceId` instead.
   /// * [createLinkRequest] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -154,8 +310,6 @@ _responseData = rawData == null ? null : deserialize<List<LinkSchema>, LinkSchem
   /// Returns a [Future] containing a [Response] with a [LinkSchema] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<LinkSchema>> createLink({ 
-    required String workspaceId,
-    String? projectSlug,
     CreateLinkRequest? createLinkRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -184,11 +338,6 @@ _responseData = rawData == null ? null : deserialize<List<LinkSchema>, LinkSchem
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      r'workspaceId': workspaceId,
-      if (projectSlug != null) r'projectSlug': projectSlug,
-    };
-
     dynamic _bodyData;
 
     try {
@@ -198,7 +347,6 @@ _bodyData=jsonEncode(createLinkRequest);
          requestOptions: _options.compose(
           _dio.options,
           _path,
-          queryParameters: _queryParameters,
         ),
         type: DioExceptionType.unknown,
         error: error,
@@ -210,7 +358,6 @@ _bodyData=jsonEncode(createLinkRequest);
       _path,
       data: _bodyData,
       options: _options,
-      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -248,8 +395,6 @@ _responseData = rawData == null ? null : deserialize<LinkSchema, LinkSchema>(raw
   ///
   /// Parameters:
   /// * [linkId] - The id of the link to delete. You may use either `linkId` (obtained via `/links/info` endpoint) or `externalId` prefixed with `ext_`.
-  /// * [workspaceId] - The ID of the workspace.
-  /// * [projectSlug] - The slug of the project. This field is deprecated – use `workspaceId` instead.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -261,8 +406,6 @@ _responseData = rawData == null ? null : deserialize<LinkSchema, LinkSchema>(raw
   /// Throws [DioException] if API call or serialization fails
   Future<Response<DeleteLink200Response>> deleteLink({ 
     required String linkId,
-    required String workspaceId,
-    String? projectSlug,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -289,15 +432,9 @@ _responseData = rawData == null ? null : deserialize<LinkSchema, LinkSchema>(raw
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      r'workspaceId': workspaceId,
-      if (projectSlug != null) r'projectSlug': projectSlug,
-    };
-
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
-      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -334,12 +471,10 @@ _responseData = rawData == null ? null : deserialize<DeleteLink200Response, Dele
   /// Retrieve the info for a link.
   ///
   /// Parameters:
-  /// * [workspaceId] - The ID of the workspace.
-  /// * [projectSlug] - The slug of the project. This field is deprecated – use `workspaceId` instead.
   /// * [domain] 
   /// * [key] - The key of the link to retrieve. E.g. for `d.to/github`, the key is `github`.
   /// * [linkId] - The unique ID of the short link.
-  /// * [externalId] - This is the ID of the link in the your database. Must be prefixed with `ext_` when passed as a query parameter.
+  /// * [externalId] - This is the ID of the link in the your database.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -350,8 +485,6 @@ _responseData = rawData == null ? null : deserialize<DeleteLink200Response, Dele
   /// Returns a [Future] containing a [Response] with a [LinkSchema] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<LinkSchema>> getLinkInfo({ 
-    required String workspaceId,
-    String? projectSlug,
     String? domain,
     String? key,
     String? linkId,
@@ -383,8 +516,6 @@ _responseData = rawData == null ? null : deserialize<DeleteLink200Response, Dele
     );
 
     final _queryParameters = <String, dynamic>{
-      r'workspaceId': workspaceId,
-      if (projectSlug != null) r'projectSlug': projectSlug,
       if (domain != null) r'domain': domain,
       if (key != null) r'key': key,
       if (linkId != null) r'linkId': linkId,
@@ -428,21 +559,23 @@ _responseData = rawData == null ? null : deserialize<LinkSchema, LinkSchema>(raw
   }
 
   /// Retrieve a list of links
-  /// Retrieve a list of links for the authenticated workspace. The list will be paginated and the provided query parameters allow filtering the returned links.
+  /// Retrieve a paginated list of links for the authenticated workspace.
   ///
   /// Parameters:
-  /// * [workspaceId] - The ID of the workspace.
-  /// * [projectSlug] - The slug of the project. This field is deprecated – use `workspaceId` instead.
   /// * [domain] - The domain to filter the links by. E.g. `ac.me`. If not provided, all links for the workspace will be returned.
-  /// * [tagId] - The tag ID to filter the links by. This field is deprecated – use `tagIds` instead.
+  /// * [tagId] - Deprecated. Use `tagIds` instead. The tag ID to filter the links by.
   /// * [tagIds] - The tag IDs to filter the links by.
   /// * [tagNames] - The unique name of the tags assigned to the short link (case insensitive).
   /// * [search] - The search term to filter the links by. The search term will be matched against the short link slug and the destination url.
   /// * [userId] - The user ID to filter the links by.
+  /// * [tenantId] - The ID of the tenant that created the link inside your system. If set, will only return links for the specified tenant.
   /// * [showArchived] - Whether to include archived links in the response. Defaults to `false` if not provided.
-  /// * [withTags] - Whether to include tags in the response. Defaults to `false` if not provided.
-  /// * [sort] - The field to sort the links by. The default is `createdAt`, and sort order is always descending.
-  /// * [page] - The page number for pagination (each page contains 100 links).
+  /// * [withTags] - DEPRECATED. Filter for links that have at least one tag assigned to them.
+  /// * [sortBy] - The field to sort the links by. The default is `createdAt`.
+  /// * [sortOrder] - The sort order. The default is `desc`.
+  /// * [sort] - DEPRECATED. Use `sortBy` instead.
+  /// * [page] - The page number for pagination.
+  /// * [pageSize] - The number of items per page.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -453,18 +586,20 @@ _responseData = rawData == null ? null : deserialize<LinkSchema, LinkSchema>(raw
   /// Returns a [Future] containing a [Response] with a [List<LinkSchema>] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<List<LinkSchema>>> getLinks({ 
-    required String workspaceId,
-    String? projectSlug,
     String? domain,
     String? tagId,
-    GetLinksTagIdsParameter? tagIds,
-    GetLinksTagNamesParameter? tagNames,
+    List<String>? tagIds,
+    List<String>? tagNames,
     String? search,
     String? userId,
+    String? tenantId,
     bool? showArchived = false,
     bool? withTags = false,
+    String? sortBy = 'createdAt',
+    String? sortOrder = 'desc',
     String? sort = 'createdAt',
-    num? page,
+    num? page = 1,
+    num? pageSize = 100,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -492,18 +627,20 @@ _responseData = rawData == null ? null : deserialize<LinkSchema, LinkSchema>(raw
     );
 
     final _queryParameters = <String, dynamic>{
-      r'workspaceId': workspaceId,
-      if (projectSlug != null) r'projectSlug': projectSlug,
       if (domain != null) r'domain': domain,
       if (tagId != null) r'tagId': tagId,
       if (tagIds != null) r'tagIds': tagIds,
       if (tagNames != null) r'tagNames': tagNames,
       if (search != null) r'search': search,
       if (userId != null) r'userId': userId,
+      if (tenantId != null) r'tenantId': tenantId,
       if (showArchived != null) r'showArchived': showArchived,
       if (withTags != null) r'withTags': withTags,
+      if (sortBy != null) r'sortBy': sortBy,
+      if (sortOrder != null) r'sortOrder': sortOrder,
       if (sort != null) r'sort': sort,
       if (page != null) r'page': page,
+      if (pageSize != null) r'pageSize': pageSize,
     };
 
     final _response = await _dio.request<Object>(
@@ -542,20 +679,19 @@ _responseData = rawData == null ? null : deserialize<List<LinkSchema>, LinkSchem
     );
   }
 
-  /// Retrieve the number of links
-  /// Retrieve the number of links for the authenticated workspace. The provided query parameters allow filtering the returned links.
+  /// Retrieve links count
+  /// Retrieve the number of links for the authenticated workspace.
   ///
   /// Parameters:
-  /// * [workspaceId] - The ID of the workspace.
-  /// * [projectSlug] - The slug of the project. This field is deprecated – use `workspaceId` instead.
   /// * [domain] - The domain to filter the links by. E.g. `ac.me`. If not provided, all links for the workspace will be returned.
-  /// * [tagId] - The tag ID to filter the links by. This field is deprecated – use `tagIds` instead.
+  /// * [tagId] - Deprecated. Use `tagIds` instead. The tag ID to filter the links by.
   /// * [tagIds] - The tag IDs to filter the links by.
   /// * [tagNames] - The unique name of the tags assigned to the short link (case insensitive).
   /// * [search] - The search term to filter the links by. The search term will be matched against the short link slug and the destination url.
   /// * [userId] - The user ID to filter the links by.
+  /// * [tenantId] - The ID of the tenant that created the link inside your system. If set, will only return links for the specified tenant.
   /// * [showArchived] - Whether to include archived links in the response. Defaults to `false` if not provided.
-  /// * [withTags] - Whether to include tags in the response. Defaults to `false` if not provided.
+  /// * [withTags] - DEPRECATED. Filter for links that have at least one tag assigned to them.
   /// * [groupBy] - The field to group the links by.
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -567,17 +703,16 @@ _responseData = rawData == null ? null : deserialize<List<LinkSchema>, LinkSchem
   /// Returns a [Future] containing a [Response] with a [num] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<num>> getLinksCount({ 
-    required String workspaceId,
-    String? projectSlug,
     String? domain,
     String? tagId,
-    GetLinksTagIdsParameter? tagIds,
-    GetLinksTagNamesParameter? tagNames,
+    List<String>? tagIds,
+    List<String>? tagNames,
     String? search,
     String? userId,
+    String? tenantId,
     bool? showArchived = false,
     bool? withTags = false,
-    GetLinksCountGroupByParameter? groupBy,
+    String? groupBy,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -605,14 +740,13 @@ _responseData = rawData == null ? null : deserialize<List<LinkSchema>, LinkSchem
     );
 
     final _queryParameters = <String, dynamic>{
-      r'workspaceId': workspaceId,
-      if (projectSlug != null) r'projectSlug': projectSlug,
       if (domain != null) r'domain': domain,
       if (tagId != null) r'tagId': tagId,
       if (tagIds != null) r'tagIds': tagIds,
       if (tagNames != null) r'tagNames': tagNames,
       if (search != null) r'search': search,
       if (userId != null) r'userId': userId,
+      if (tenantId != null) r'tenantId': tenantId,
       if (showArchived != null) r'showArchived': showArchived,
       if (withTags != null) r'withTags': withTags,
       if (groupBy != null) r'groupBy': groupBy,
@@ -659,9 +793,7 @@ _responseData = rawData == null ? null : deserialize<num, num>(rawData, 'num', g
   ///
   /// Parameters:
   /// * [linkId] - The id of the link to update. You may use either `linkId` (obtained via `/links/info` endpoint) or `externalId` prefixed with `ext_`.
-  /// * [workspaceId] - The ID of the workspace.
-  /// * [projectSlug] - The slug of the project. This field is deprecated – use `workspaceId` instead.
-  /// * [createLinkRequest] 
+  /// * [updateLinkRequest] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -673,9 +805,7 @@ _responseData = rawData == null ? null : deserialize<num, num>(rawData, 'num', g
   /// Throws [DioException] if API call or serialization fails
   Future<Response<LinkSchema>> updateLink({ 
     required String linkId,
-    required String workspaceId,
-    String? projectSlug,
-    CreateLinkRequest? createLinkRequest,
+    UpdateLinkRequest? updateLinkRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -703,21 +833,15 @@ _responseData = rawData == null ? null : deserialize<num, num>(rawData, 'num', g
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      r'workspaceId': workspaceId,
-      if (projectSlug != null) r'projectSlug': projectSlug,
-    };
-
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(createLinkRequest);
+_bodyData=jsonEncode(updateLinkRequest);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
           _dio.options,
           _path,
-          queryParameters: _queryParameters,
         ),
         type: DioExceptionType.unknown,
         error: error,
@@ -729,7 +853,6 @@ _bodyData=jsonEncode(createLinkRequest);
       _path,
       data: _bodyData,
       options: _options,
-      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -766,8 +889,6 @@ _responseData = rawData == null ? null : deserialize<LinkSchema, LinkSchema>(raw
   /// Upsert a link for the authenticated workspace by its URL. If a link with the same URL already exists, return it (or update it if there are any changes). Otherwise, a new link will be created.
   ///
   /// Parameters:
-  /// * [workspaceId] - The ID of the workspace.
-  /// * [projectSlug] - The slug of the project. This field is deprecated – use `workspaceId` instead.
   /// * [createLinkRequest] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -779,8 +900,6 @@ _responseData = rawData == null ? null : deserialize<LinkSchema, LinkSchema>(raw
   /// Returns a [Future] containing a [Response] with a [LinkSchema] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<LinkSchema>> upsertLink({ 
-    required String workspaceId,
-    String? projectSlug,
     CreateLinkRequest? createLinkRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -809,11 +928,6 @@ _responseData = rawData == null ? null : deserialize<LinkSchema, LinkSchema>(raw
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      r'workspaceId': workspaceId,
-      if (projectSlug != null) r'projectSlug': projectSlug,
-    };
-
     dynamic _bodyData;
 
     try {
@@ -823,7 +937,6 @@ _bodyData=jsonEncode(createLinkRequest);
          requestOptions: _options.compose(
           _dio.options,
           _path,
-          queryParameters: _queryParameters,
         ),
         type: DioExceptionType.unknown,
         error: error,
@@ -835,7 +948,6 @@ _bodyData=jsonEncode(createLinkRequest);
       _path,
       data: _bodyData,
       options: _options,
-      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,

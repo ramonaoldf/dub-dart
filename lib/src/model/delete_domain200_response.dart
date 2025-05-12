@@ -26,7 +26,7 @@ class DeleteDomain200Response {
     
     name: r'slug',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -34,13 +34,15 @@ class DeleteDomain200Response {
 
 
 
-  @override
-  bool operator ==(Object other) => identical(this, other) || other is DeleteDomain200Response &&
-     other.slug == slug;
 
-  @override
-  int get hashCode =>
-    slug.hashCode;
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is DeleteDomain200Response &&
+      other.slug == slug;
+
+    @override
+    int get hashCode =>
+        slug.hashCode;
 
   factory DeleteDomain200Response.fromJson(Map<String, dynamic> json) => _$DeleteDomain200ResponseFromJson(json);
 

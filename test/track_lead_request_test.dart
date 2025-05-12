@@ -7,7 +7,7 @@ void main() {
   // TODO add properties to the entity
 
   group(TrackLeadRequest, () {
-    // The ID of the click in th Dub. You can read this value from `dclid` cookie.
+    // The ID of the click in th Dub. You can read this value from `dub_id` cookie.
     // String clickId
     test('to test the property `clickId`', () async {
       // TODO
@@ -16,6 +16,12 @@ void main() {
     // The name of the event to track.
     // String eventName
     test('to test the property `eventName`', () async {
+      // TODO
+    });
+
+    // This is the unique identifier for the customer in the client's app. This is used to track the customer's journey.
+    // String externalId (default value: '')
+    test('to test the property `externalId`', () async {
       // TODO
     });
 

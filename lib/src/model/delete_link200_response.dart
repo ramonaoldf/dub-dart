@@ -26,7 +26,7 @@ class DeleteLink200Response {
     
     name: r'id',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -34,13 +34,15 @@ class DeleteLink200Response {
 
 
 
-  @override
-  bool operator ==(Object other) => identical(this, other) || other is DeleteLink200Response &&
-     other.id == id;
 
-  @override
-  int get hashCode =>
-    id.hashCode;
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is DeleteLink200Response &&
+      other.id == id;
+
+    @override
+    int get hashCode =>
+        id.hashCode;
 
   factory DeleteLink200Response.fromJson(Map<String, dynamic> json) => _$DeleteLink200ResponseFromJson(json);
 

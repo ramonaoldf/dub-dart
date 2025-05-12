@@ -9,12 +9,8 @@ import 'package:dub/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **eventName** | **String** |  | 
-**customerId** | **String** |  | 
-**amount** | **num** |  | 
-**paymentProcessor** | **String** |  | 
-**invoiceId** | **String** |  | 
-**currency** | **String** |  | 
-**metadata** | **Map&lt;String, Object&gt;** |  | 
+**customer** | [**TrackSale200ResponseCustomer**](TrackSale200ResponseCustomer.md) |  | 
+**sale** | [**TrackSale200ResponseSale**](TrackSale200ResponseSale.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -4,7 +4,7 @@ import 'package:example/create-session.dart';
 import 'package:example/utils/utils.dart';
 import 'package:example/widget/create_link_card.dart';
 import 'package:example/utils/session.dart';
-import 'package:example/widget/link-detail-card.dart';
+import 'package:example/widget/link_detail_card.dart';
 import 'package:example/widget/title_action_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -38,7 +38,6 @@ class _MyShortLinksState extends State<MyShortLinks> {
     final session = Session.of(context);
     try {
       final response = await session.api.getLinksApi().getLinks(
-            workspaceId: session.workspaceId!,
             headers: session.headers,
           );
       final list = response.data!;
@@ -90,7 +89,6 @@ class _MyShortLinksState extends State<MyShortLinks> {
   Future<void> deleteLink(String id) async {
     final session = Session.of(context);
     await session.api.getLinksApi().deleteLink(
-          workspaceId: session.workspaceId!,
           linkId: id,
           headers: session.headers,
         );

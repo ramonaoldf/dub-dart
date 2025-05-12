@@ -8,9 +8,10 @@ import 'package:dub/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**clickId** | **String** | The ID of the click in th Dub. You can read this value from `dclid` cookie. | 
+**clickId** | **String** | The ID of the click in th Dub. You can read this value from `dub_id` cookie. | 
 **eventName** | **String** | The name of the event to track. | 
-**customerId** | **String** | This is the unique identifier for the customer in the client's app. This is used to track the customer's journey. | 
+**externalId** | **String** | This is the unique identifier for the customer in the client's app. This is used to track the customer's journey. | [optional] [default to '']
+**customerId** | **String** | This is the unique identifier for the customer in the client's app. This is used to track the customer's journey. | [optional] 
 **customerName** | **String** | Name of the customer in the client's app. | [optional] 
 **customerEmail** | **String** | Email of the customer in the client's app. | [optional] 
 **customerAvatar** | **String** | Avatar of the customer in the client's app. | [optional] 

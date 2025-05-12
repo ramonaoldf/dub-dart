@@ -10,7 +10,7 @@ rm -rf ./analysis_optional.yaml
 
 export FRONTEND_PATH="./"
 
-openapi-generator generate -i openapi.json -g dart-dio -o $FRONTEND_PATH --additional-properties=serializationLibrary=json_serializable,apiTests=true,modelTests=true,pubName=dub,pubDescription="Unofficial Dub.co SDK",pubHomepage="https://dub.co",pubLibrary="dub_api",pubRepository="https://github.com/thealphamerc/dub-dart",pubVersion=0.0.1,enumUnknownDefaultCase=true
+openapi-generator generate -i openapi.json -g dart-dio -o $FRONTEND_PATH --additional-properties=serializationLibrary=json_serializable,apiTests=true,modelTests=false,pubName=dub,pubDescription="Dub is a unofficial dart package for Dub.co APIs, providing a convenient wrapper around Dub API.",pubHomepage="https://dub.co",pubLibrary="dub_api",pubRepository="https://github.com/thealphamerc/dub-dart",pubVersion=0.0.4,enumUnknownDefaultCase=true
 
 
 # dart run build_runner build --delete-conflicting-outputs

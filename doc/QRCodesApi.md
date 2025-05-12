@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **getQRCode**
-> String getQRCode(url, size, level, fgColor, bgColor, includeMargin)
+> String getQRCode(url, logo, size, level, fgColor, bgColor, hideLogo, margin, includeMargin)
 
 Retrieve a QR code
 
@@ -25,14 +25,17 @@ import 'package:dub/api.dart';
 
 final api = Dub().getQRCodesApi();
 final String url = url_example; // String | The URL to generate a QR code for.
+final String logo = logo_example; // String | The logo to include in the QR code. Can only be used with a paid plan on Dub.co.
 final num size = 8.14; // num | The size of the QR code in pixels. Defaults to `600` if not provided.
 final String level = level_example; // String | The level of error correction to use for the QR code. Defaults to `L` if not provided.
 final String fgColor = fgColor_example; // String | The foreground color of the QR code in hex format. Defaults to `#000000` if not provided.
 final String bgColor = bgColor_example; // String | The background color of the QR code in hex format. Defaults to `#ffffff` if not provided.
-final bool includeMargin = true; // bool | Whether to include a margin around the QR code. Defaults to `false` if not provided.
+final bool hideLogo = true; // bool | Whether to hide the logo in the QR code. Can only be used with a paid plan on Dub.co.
+final num margin = 8.14; // num | The size of the margin around the QR code. Defaults to 2 if not provided.
+final bool includeMargin = true; // bool | DEPRECATED: Margin is included by default. Use the `margin` prop to customize the margin size.
 
 try {
-    final response = api.getQRCode(url, size, level, fgColor, bgColor, includeMargin);
+    final response = api.getQRCode(url, logo, size, level, fgColor, bgColor, hideLogo, margin, includeMargin);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling QRCodesApi->getQRCode: $e\n');
@@ -44,11 +47,14 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **url** | **String**| The URL to generate a QR code for. | 
+ **logo** | **String**| The logo to include in the QR code. Can only be used with a paid plan on Dub.co. | [optional] 
  **size** | **num**| The size of the QR code in pixels. Defaults to `600` if not provided. | [optional] [default to 600]
  **level** | **String**| The level of error correction to use for the QR code. Defaults to `L` if not provided. | [optional] [default to 'L']
  **fgColor** | **String**| The foreground color of the QR code in hex format. Defaults to `#000000` if not provided. | [optional] [default to '#000000']
  **bgColor** | **String**| The background color of the QR code in hex format. Defaults to `#ffffff` if not provided. | [optional] [default to '#FFFFFF']
- **includeMargin** | **bool**| Whether to include a margin around the QR code. Defaults to `false` if not provided. | [optional] [default to false]
+ **hideLogo** | **bool**| Whether to hide the logo in the QR code. Can only be used with a paid plan on Dub.co. | [optional] [default to false]
+ **margin** | **num**| The size of the margin around the QR code. Defaults to 2 if not provided. | [optional] [default to 2]
+ **includeMargin** | **bool**| DEPRECATED: Margin is included by default. Use the `margin` prop to customize the margin size. | [optional] [default to true]
 
 ### Return type
 

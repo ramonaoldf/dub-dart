@@ -19,8 +19,9 @@ WorkspaceSchemaUsersInner _$WorkspaceSchemaUsersInnerFromJson(
         final val = WorkspaceSchemaUsersInner(
           role: $checkedConvert(
               'role',
-              (v) =>
-                  $enumDecode(_$WorkspaceSchemaUsersInnerRoleEnumEnumMap, v)),
+              (v) => $enumDecode(_$WorkspaceSchemaUsersInnerRoleEnumEnumMap, v,
+                  unknownValue:
+                      WorkspaceSchemaUsersInnerRoleEnum.unknownDefaultOpenApi)),
         );
         return val;
       },

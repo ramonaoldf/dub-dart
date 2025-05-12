@@ -14,29 +14,22 @@ TrackSale200Response _$TrackSale200ResponseFromJson(
       ($checkedConvert) {
         $checkKeys(
           json,
-          requiredKeys: const [
-            'eventName',
-            'customerId',
-            'amount',
-            'paymentProcessor',
-            'invoiceId',
-            'currency',
-            'metadata'
-          ],
+          requiredKeys: const ['eventName', 'customer', 'sale'],
         );
         final val = TrackSale200Response(
           eventName: $checkedConvert('eventName', (v) => v as String),
-          customerId: $checkedConvert('customerId', (v) => v as String),
-          amount: $checkedConvert('amount', (v) => v as num),
-          paymentProcessor:
-              $checkedConvert('paymentProcessor', (v) => v as String),
-          invoiceId: $checkedConvert('invoiceId', (v) => v as String?),
-          currency: $checkedConvert('currency', (v) => v as String),
-          metadata: $checkedConvert(
-              'metadata',
-              (v) => (v as Map<String, dynamic>?)?.map(
-                    (k, e) => MapEntry(k, e as Object),
-                  )),
+          customer: $checkedConvert(
+              'customer',
+              (v) => v == null
+                  ? null
+                  : TrackSale200ResponseCustomer.fromJson(
+                      v as Map<String, dynamic>)),
+          sale: $checkedConvert(
+              'sale',
+              (v) => v == null
+                  ? null
+                  : TrackSale200ResponseSale.fromJson(
+                      v as Map<String, dynamic>)),
         );
         return val;
       },
@@ -46,10 +39,6 @@ Map<String, dynamic> _$TrackSale200ResponseToJson(
         TrackSale200Response instance) =>
     <String, dynamic>{
       'eventName': instance.eventName,
-      'customerId': instance.customerId,
-      'amount': instance.amount,
-      'paymentProcessor': instance.paymentProcessor,
-      'invoiceId': instance.invoiceId,
-      'currency': instance.currency,
-      'metadata': instance.metadata,
+      'customer': instance.customer?.toJson(),
+      'sale': instance.sale?.toJson(),
     };

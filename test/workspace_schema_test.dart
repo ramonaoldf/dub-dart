@@ -31,6 +31,42 @@ void main() {
       // TODO
     });
 
+    // The invite code of the workspace.
+    // String inviteCode
+    test('to test the property `inviteCode`', () async {
+      // TODO
+    });
+
+    // The plan of the workspace.
+    // String plan
+    test('to test the property `plan`', () async {
+      // TODO
+    });
+
+    // The Stripe ID of the workspace.
+    // String stripeId
+    test('to test the property `stripeId`', () async {
+      // TODO
+    });
+
+    // The date and time when the billing cycle starts for the workspace.
+    // num billingCycleStart
+    test('to test the property `billingCycleStart`', () async {
+      // TODO
+    });
+
+    // The date and time when the payment failed for the workspace.
+    // String paymentFailedAt
+    test('to test the property `paymentFailedAt`', () async {
+      // TODO
+    });
+
+    // The Stripe Connect ID of the workspace.
+    // String stripeConnectId
+    test('to test the property `stripeConnectId`', () async {
+      // TODO
+    });
+
     // The usage of the workspace.
     // num usage
     test('to test the property `usage`', () async {
@@ -55,6 +91,18 @@ void main() {
       // TODO
     });
 
+    // The dollar amount of tracked revenue in the current billing cycle (in cents).
+    // num salesUsage
+    test('to test the property `salesUsage`', () async {
+      // TODO
+    });
+
+    // The limit of tracked revenue in the current billing cycle (in cents).
+    // num salesLimit
+    test('to test the property `salesLimit`', () async {
+      // TODO
+    });
+
     // The domains limit of the workspace.
     // num domainsLimit
     test('to test the property `domainsLimit`', () async {
@@ -73,27 +121,33 @@ void main() {
       // TODO
     });
 
-    // The plan of the workspace.
-    // String plan
-    test('to test the property `plan`', () async {
+    // The AI usage of the workspace.
+    // num aiUsage
+    test('to test the property `aiUsage`', () async {
       // TODO
     });
 
-    // The Stripe ID of the workspace.
-    // String stripeId
-    test('to test the property `stripeId`', () async {
+    // The AI limit of the workspace.
+    // num aiLimit
+    test('to test the property `aiLimit`', () async {
       // TODO
     });
 
-    // The date and time when the billing cycle starts for the workspace.
-    // num billingCycleStart
-    test('to test the property `billingCycleStart`', () async {
+    // Whether the workspace has conversion tracking enabled automatically for new links (d.to/conversions).
+    // bool conversionEnabled
+    test('to test the property `conversionEnabled`', () async {
       // TODO
     });
 
-    // [BETA]: The Stripe Connect ID of the workspace.
-    // String stripeConnectId
-    test('to test the property `stripeConnectId`', () async {
+    // Whether the workspace has claimed a free .link domain. (dub.link/free)
+    // bool dotLinkClaimed
+    test('to test the property `dotLinkClaimed`', () async {
+      // TODO
+    });
+
+    // Whether the workspace has Dub Partners enabled.
+    // bool partnersEnabled
+    test('to test the property `partnersEnabled`', () async {
       // TODO
     });
 
@@ -115,15 +169,15 @@ void main() {
       // TODO
     });
 
-    // The invite code of the workspace.
-    // String inviteCode
-    test('to test the property `inviteCode`', () async {
+    // The feature flags of the workspace, indicating which features are enabled.
+    // Map<String, bool> flags
+    test('to test the property `flags`', () async {
       // TODO
     });
 
-    // Whether the workspace is enrolled in the beta testing program.
-    // bool betaTester
-    test('to test the property `betaTester`', () async {
+    // The miscellaneous key-value store of the workspace.
+    // Map<String, Object> store
+    test('to test the property `store`', () async {
       // TODO
     });
 

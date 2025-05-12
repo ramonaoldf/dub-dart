@@ -17,8 +17,11 @@ GetLinks403ResponseError _$GetLinks403ResponseErrorFromJson(
           requiredKeys: const ['code', 'message'],
         );
         final val = GetLinks403ResponseError(
-          code: $checkedConvert('code',
-              (v) => $enumDecode(_$GetLinks403ResponseErrorCodeEnumEnumMap, v)),
+          code: $checkedConvert(
+              'code',
+              (v) => $enumDecode(_$GetLinks403ResponseErrorCodeEnumEnumMap, v,
+                  unknownValue:
+                      GetLinks403ResponseErrorCodeEnum.unknownDefaultOpenApi)),
           message: $checkedConvert('message', (v) => v as String),
           docUrl: $checkedConvert('doc_url', (v) => v as String?),
         );

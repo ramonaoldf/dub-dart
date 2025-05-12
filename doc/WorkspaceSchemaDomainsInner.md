@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **slug** | **String** | The domain name. | 
 **primary** | **bool** | Whether the domain is the primary domain for the workspace. | [default to false]
+**verified** | **bool** | Whether the domain is verified. | [default to false]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -26,7 +26,7 @@ class GetLinks422Response {
     
     name: r'error',
     required: true,
-    includeIfNull: false
+    includeIfNull: false,
   )
 
 
@@ -34,13 +34,15 @@ class GetLinks422Response {
 
 
 
-  @override
-  bool operator ==(Object other) => identical(this, other) || other is GetLinks422Response &&
-     other.error == error;
 
-  @override
-  int get hashCode =>
-    error.hashCode;
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is GetLinks422Response &&
+      other.error == error;
+
+    @override
+    int get hashCode =>
+        error.hashCode;
 
   factory GetLinks422Response.fromJson(Map<String, dynamic> json) => _$GetLinks422ResponseFromJson(json);
 

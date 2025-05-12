@@ -17,8 +17,11 @@ GetLinks429ResponseError _$GetLinks429ResponseErrorFromJson(
           requiredKeys: const ['code', 'message'],
         );
         final val = GetLinks429ResponseError(
-          code: $checkedConvert('code',
-              (v) => $enumDecode(_$GetLinks429ResponseErrorCodeEnumEnumMap, v)),
+          code: $checkedConvert(
+              'code',
+              (v) => $enumDecode(_$GetLinks429ResponseErrorCodeEnumEnumMap, v,
+                  unknownValue:
+                      GetLinks429ResponseErrorCodeEnum.unknownDefaultOpenApi)),
           message: $checkedConvert('message', (v) => v as String),
           docUrl: $checkedConvert('doc_url', (v) => v as String?),
         );

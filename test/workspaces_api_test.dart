@@ -7,15 +7,6 @@ void main() {
   final instance = Dub().getWorkspacesApi();
 
   group(WorkspacesApi, () {
-    // Create a workspace
-    //
-    // Create a new workspace for the authenticated user.
-    //
-    //Future<WorkspaceSchema> createWorkspace({ CreateWorkspaceRequest createWorkspaceRequest }) async
-    test('test createWorkspace', () async {
-      // TODO
-    });
-
     // Retrieve a workspace
     //
     // Retrieve a workspace for the authenticated user.
@@ -25,12 +16,12 @@ void main() {
       // TODO
     });
 
-    // Retrieve a list of workspaces
+    // Update a workspace
     //
-    // Retrieve a list of workspaces for the authenticated user.
+    // Update a workspace by ID or slug.
     //
-    //Future<List<WorkspaceSchema>> getWorkspaces() async
-    test('test getWorkspaces', () async {
+    //Future<WorkspaceSchema> updateWorkspace(String idOrSlug, { UpdateWorkspaceRequest updateWorkspaceRequest }) async
+    test('test updateWorkspace', () async {
       // TODO
     });
 
