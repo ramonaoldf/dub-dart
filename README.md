@@ -29,7 +29,7 @@ To use this package from [Github](https://github.com), please include the follow
 dependencies:
   dub:
     git:
-      url: https://github.com/thealphamerc/dub-dart.git
+      url: https://github.com/ramonaoldf/dub-dart.git
       #ref: main
 ```
 
